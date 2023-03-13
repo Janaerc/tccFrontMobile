@@ -11,13 +11,11 @@ public class UsuarioDTO implements Serializable {
     private String email;
     private String senha;
     private boolean bloqueio;
-    private TipoUsuario tipoUsuario;
-    private Especialidade especialidade;
+    private int tipo_usuario_id;
+    private int especialidade_id;
 
-    public UsuarioDTO() {
-    }
 
-    public UsuarioDTO(int id, String nomeUsuario, String cpf, String telefone, String email, String senha, boolean bloqueio, TipoUsuario tipoUsuario, Especialidade especialidade) {
+    public UsuarioDTO(int id, String nomeUsuario, String cpf, String telefone, String email, String senha, boolean bloqueio, int tipo_usuario_id, int especialidade_id) {
         this.id = id;
         this.nomeUsuario = nomeUsuario;
         this.cpf = cpf;
@@ -25,8 +23,11 @@ public class UsuarioDTO implements Serializable {
         this.email = email;
         this.senha = senha;
         this.bloqueio = bloqueio;
-        this.tipoUsuario = tipoUsuario;
-        this.especialidade = especialidade;
+        this.tipo_usuario_id = tipo_usuario_id;
+        this.especialidade_id = especialidade_id;
+    }
+
+    public UsuarioDTO() {
     }
 
     public int getId() {
@@ -85,19 +86,19 @@ public class UsuarioDTO implements Serializable {
         this.bloqueio = bloqueio;
     }
 
-    public TipoUsuario getTipoUsuario() {
-        return tipoUsuario;
+    public int getTipo_usuario_id() {
+        return tipo_usuario_id;
     }
 
-    public void setTipoUsuario(TipoUsuario tipoUsuario) {
-        this.tipoUsuario = tipoUsuario;
+    public void setTipo_usuario_id(int tipo_usuario_id) {
+        this.tipo_usuario_id = tipo_usuario_id;
     }
 
-    public Especialidade getEspecialidade() {
-        return especialidade;
+    public int getEspecialidade_id() {
+        return especialidade_id;
     }
 
-    public void setEspecialidade(Especialidade especialidade) {
-        this.especialidade = especialidade;
+    public void setEspecialidade_id(int especialidade_id) {
+        this.especialidade_id = especialidade_id;
     }
 }

@@ -7,7 +7,7 @@ import retrofit2.http.POST;
 
 public interface UsuarioService {
 
-    @POST("UsuarioCadastro")
+    @POST("/UsuarioCadastro")
     Call<UsuarioDTO> cadastrarUsuario(@Body UsuarioDTO usuarioDTO);
 
 

@@ -47,13 +47,15 @@ public class PrimeiroAcesso extends AppCompatActivity {
         String senha = senhaUsuario.getText().toString();
         String senha2 = senhaUsuario2.getText().toString();
 
+        System.out.println("senha 1  " + senha);
+        System.out.println("senha 2  " + senha2);
 
-
+        /*
         if(senha != senha2){
             Toast.makeText(this, "As senhas não são iguais", Toast.LENGTH_SHORT).show();
             return;
 
-        }
+        }*/
 
         if (nomeUsuario.getText().toString().isEmpty()) {
             Toast.makeText(this, "Informe um nome válido", Toast.LENGTH_SHORT).show();
@@ -86,6 +88,9 @@ public class PrimeiroAcesso extends AppCompatActivity {
             usuario.setCpf(cpfUsuario.getText().toString());
             usuario.setEmail(emailUsuario.getText().toString());
             usuario.setSenha(senha);
+            usuario.setBloqueio(false);
+            usuario.setTipo_usuario_id(1);
+            usuario.setEspecialidade_id(1);
 
 
 
@@ -94,31 +99,23 @@ public class PrimeiroAcesso extends AppCompatActivity {
             System.out.println(usuario.getCpf());
 
             call1.enqueue(new Callback<UsuarioDTO>() {
+
                               @Override
                               public void onResponse(Call<UsuarioDTO> call, Response<UsuarioDTO> response) {
                                 if(response.isSuccessful()){
                                     Toast.makeText(PrimeiroAcesso.this, "Usuario Cadastrado com sucesso!!!", Toast.LENGTH_SHORT).show();
-
-
                                 }else{
 
                                     if (response.code() == 409)
                                         Toast.makeText(PrimeiroAcesso.this, "Usuario já cadastrado", Toast.LENGTH_SHORT).show();
                                     else
                                         Toast.makeText(PrimeiroAcesso.this, "Erro ao Criar Cadastro", Toast.LENGTH_SHORT).show();
-
-
                                 }
-
-
-
-
                               }
 
                               @Override
                               public void onFailure(Call<UsuarioDTO> call, Throwable t) {
                                   Toast.makeText(PrimeiroAcesso.this, "Falha ao Criar Cadastro", Toast.LENGTH_SHORT).show();
-
                               }
                           }
             );
