@@ -115,6 +115,7 @@ public class PrimeiroAcesso extends AppCompatActivity {
 
                               @Override
                               public void onFailure(Call<UsuarioDTO> call, Throwable t) {
+                                t.printStackTrace();
                                   Toast.makeText(PrimeiroAcesso.this, "Falha ao Criar Cadastro", Toast.LENGTH_SHORT).show();
                               }
                           }
