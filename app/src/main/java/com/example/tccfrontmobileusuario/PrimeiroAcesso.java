@@ -50,12 +50,12 @@ public class PrimeiroAcesso extends AppCompatActivity {
         System.out.println("senha 1  " + senha);
         System.out.println("senha 2  " + senha2);
 
-        /*
-        if(senha != senha2){
+
+        if(!senha.equals(senha2)){
             Toast.makeText(this, "As senhas não são iguais", Toast.LENGTH_SHORT).show();
             return;
 
-        }*/
+        }
 
         if (nomeUsuario.getText().toString().isEmpty()) {
             Toast.makeText(this, "Informe um nome válido", Toast.LENGTH_SHORT).show();
@@ -104,6 +104,8 @@ public class PrimeiroAcesso extends AppCompatActivity {
                               public void onResponse(Call<UsuarioDTO> call, Response<UsuarioDTO> response) {
                                 if(response.isSuccessful()){
                                     Toast.makeText(PrimeiroAcesso.this, "Usuario Cadastrado com sucesso!!!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(PrimeiroAcesso.this, MainActivity.class);
+                                    startActivity(intent);
                                 }else{
 
                                     if (response.code() == 409)
