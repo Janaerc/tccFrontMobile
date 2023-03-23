@@ -57,7 +57,7 @@
         <EditText
             android:id="@+id/editTextTextPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="72dp"
             android:layout_marginLeft="15sp"
             android:layout_marginRight="15sp"
             android:layout_marginBottom="15sp"
@@ -82,8 +82,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="89dp"
-            android:layout_marginTop="20sp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -91,7 +91,7 @@
                 android:id="@+id/textViewEsqueceuASenha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:text="Esqueceu a Senha?"
                 android:textAlignment="center"
                 android:textColor="#848383"
@@ -105,7 +105,23 @@
                 android:onClick="primeiroAcesso"
                 android:text="Primeiro Acesso?"
                 android:textAlignment="center" />
+
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logoufpr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            />
+
+
             </LinearLayout>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
