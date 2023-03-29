@@ -1,122 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/logoUFOT"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
 
 
+<androidx.core.widget.NestedScrollView
+        android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60sp"
-            android:layout_marginBottom="60sp"
-            android:text="Manutenção UFPR"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/logoUFOT"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-        <View
-            android:id="@+id/containerComponents"
-            style="@style/ConteinerComponents"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView"
-        />
 
-        <EditText
-            android:id="@+id/editTextCPFLogin"
-            style="@style/editText"
-            android:inputType="text"
-            android:hint="CPF"
-            android:textSize="20dp"
-            android:drawableRight="@drawable/baseline_person_2_24"
-            app:layout_constraintStart_toStartOf="@id/containerComponents"
-            app:layout_constraintEnd_toEndOf="@id/containerComponents"
-            app:layout_constraintTop_toTopOf="@id/containerComponents"
-
-            />
-
-        <EditText
-            android:id="@+id/editTextTextPassword"
-            android:hint="Senha"
-            style="@style/editText"
-            android:textSize="20dp"
-            android:drawableRight="@drawable/baseline_remove_eye_24"
-            app:layout_constraintStart_toStartOf="@id/containerComponents"
-            app:layout_constraintEnd_toEndOf="@id/containerComponents"
-            app:layout_constraintTop_toBottomOf="@id/editTextCPFLogin"
-            android:inputType="textPassword" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_acessar"
-            style="@style/Button"
-            android:onClick="login"
-            android:text="Acessar"
-
-            app:layout_constraintStart_toStartOf="@id/containerComponents"
-            app:layout_constraintEnd_toEndOf="@id/containerComponents"
-            app:layout_constraintTop_toBottomOf="@id/editTextTextPassword"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/button_acessar"
-            app:layout_constraintStart_toStartOf="@id/containerComponents"
-            app:layout_constraintEnd_toEndOf="@id/containerComponents"
-            android:gravity="center">
 
             <TextView
-                android:id="@+id/textViewEsqueceuASenha"
-                style="@style/linkAcesso"
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120sp"
+                android:text="Manutenção UFPR"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <View
+                android:id="@+id/containerComponents"
+                style="@style/ConteinerComponents"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView"
+                app:layout_constraintBottom_toTopOf="@id/logo"
+            />
+
+            <EditText
+                android:id="@+id/editTextCPFLogin"
+                style="@style/editText"
+                android:inputType="text"
+                android:hint="CPF"
+                android:textSize="20dp"
+                android:drawableRight="@drawable/baseline_person_2_24"
+                app:layout_constraintStart_toStartOf="@id/containerComponents"
+                app:layout_constraintEnd_toEndOf="@id/containerComponents"
+                app:layout_constraintTop_toTopOf="@id/containerComponents"
+
+                />
+
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:hint="Senha"
+                style="@style/editText"
+                android:textSize="20dp"
+                android:drawableRight="@drawable/baseline_remove_eye_24"
+                app:layout_constraintStart_toStartOf="@id/containerComponents"
+                app:layout_constraintEnd_toEndOf="@id/containerComponents"
+                app:layout_constraintTop_toBottomOf="@id/editTextCPFLogin"
+                android:inputType="textPassword" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_acessar"
+                style="@style/Button_blue"
+                android:onClick="login"
+                android:text="Entrar"
+                app:layout_constraintStart_toStartOf="@id/containerComponents"
+                app:layout_constraintEnd_toEndOf="@id/containerComponents"
+                app:layout_constraintTop_toBottomOf="@id/editTextTextPassword"/>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Esqueceu a Senha?"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@id/button_acessar"
                 app:layout_constraintStart_toStartOf="@id/containerComponents"
                 app:layout_constraintEnd_toEndOf="@id/containerComponents"
-                 />
+               >
 
-            <TextView
-                android:id="@+id/textViewPrimeiroAcesso"
-                style="@style/linkAcesso"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/textViewEsqueceuASenha"
+                    style="@style/linkAcesso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="esqueceuSenha"
+                    android:text="Esqueceu a Senha?"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="parent" />
 
-                android:onClick="primeiroAcesso"
-                android:text="Primeiro Acesso?"
-                android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/textViewPrimeiroAcesso"
+                    style="@style/linkAcesso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="primeiroAcesso"
+                    android:text="Primeiro Acesso?"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="parent" />
 
-        </LinearLayout>
+            </LinearLayout>
 
-        <ImageView
-            android:id="@+id/logo"
+            <ImageView
+                android:id="@+id/logo"
 
-            android:layout_width="200dp"
-            android:layout_height="150dp"
-            android:src="@drawable/logoufpr"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_gravity="center"
-            android:padding="10dp"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:src="@drawable/logoufpr"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:layout_marginBottom="70dp"
 
-            />
-
-
-
+                />
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

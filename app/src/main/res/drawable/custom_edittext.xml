@@ -5,7 +5,7 @@
 
 
     <stroke
-        android:widht = "3dp"
+        android:width="3dp"
         android:color="@color/gray"/>
 
     <corners
