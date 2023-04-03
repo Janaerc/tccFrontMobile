@@ -2,10 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-/**
- *
- * @author nicol
- */
+
 public class MaterialDTO implements Serializable{
     private Integer id;
     private String nome;

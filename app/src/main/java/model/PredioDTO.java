@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 
 
-class PredioDTO implements Serializable{
+public class PredioDTO implements Serializable{
     private Integer id;
     private String nome;
     private CampusDTO campusId;

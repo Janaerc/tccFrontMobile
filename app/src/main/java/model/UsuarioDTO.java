@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-class UsuarioDTO implements Serializable{
+public class UsuarioDTO implements Serializable{
 
     private Integer id;
     private String nome;
