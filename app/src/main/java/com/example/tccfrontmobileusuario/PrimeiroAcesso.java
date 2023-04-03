@@ -27,8 +27,6 @@ public class PrimeiroAcesso extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_primeiro_acesso);
-
-
         nomeUsuario = findViewById(R.id.editTextName);
         telefoneUsuario = findViewById(R.id.editTextTelefone);
         cpfUsuario = findViewById(R.id.editTextCpf);
@@ -41,14 +39,8 @@ public class PrimeiroAcesso extends AppCompatActivity {
 
         UsuarioDTO usuario = new UsuarioDTO();
 
-
-
-
         String senha = senhaUsuario.getText().toString();
         String senha2 = senhaUsuario2.getText().toString();
-
-        System.out.println("senha 1  " + senha);
-        System.out.println("senha 2  " + senha2);
 
 
         if(!senha.equals(senha2)){
@@ -83,20 +75,17 @@ public class PrimeiroAcesso extends AppCompatActivity {
 
 
 
-            usuario.setNomeUsuario(nomeUsuario.getText().toString());
+            usuario.setNome(nomeUsuario.getText().toString());
             usuario.setTelefone(telefoneUsuario.getText().toString());
             usuario.setCpf(cpfUsuario.getText().toString());
             usuario.setEmail(emailUsuario.getText().toString());
             usuario.setSenha(senha);
             usuario.setBloqueio(false);
-            usuario.setTipo_usuario_id(1);
-            usuario.setEspecialidade_id(1);
-
-
+            usuario.getTipoUsuarioId().setId(1);
+            usuario.getEspecialidadeId().setId(1);
 
 
            Call<UsuarioDTO> call1 = new RetrofitConfig().getUsuarioService().cadastrarUsuario(usuario);
-            System.out.println(usuario.getCpf());
 
             call1.enqueue(new Callback<UsuarioDTO>() {
 

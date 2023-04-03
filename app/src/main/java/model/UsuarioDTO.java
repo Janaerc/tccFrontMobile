@@ -2,48 +2,47 @@ package model;
 
 import java.io.Serializable;
 
-public class UsuarioDTO implements Serializable {
+public class UsuarioDTO implements Serializable{
 
-    private int id;
-    private String nomeUsuario;
+    private Integer id;
+    private String nome;
     private String cpf;
     private String telefone;
     private String email;
     private String senha;
-    private boolean bloqueio;
-    private int tipo_usuario_id;
-    private int especialidade_id;
+    private Boolean bloqueio;
+    private EspecialidadeDTO especialidadeId;
+    private TipoUsuarioDTO tipoUsuarioId;
 
+    public UsuarioDTO() {
+    }
 
-    public UsuarioDTO(int id, String nomeUsuario, String cpf, String telefone, String email, String senha, boolean bloqueio, int tipo_usuario_id, int especialidade_id) {
+    public UsuarioDTO(Integer id, String nome, String cpf, String telefone, String email, String senha, Boolean bloqueio, EspecialidadeDTO especialidadeId, TipoUsuarioDTO tipoUsuarioId) {
         this.id = id;
-        this.nomeUsuario = nomeUsuario;
+        this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
         this.email = email;
         this.senha = senha;
         this.bloqueio = bloqueio;
-        this.tipo_usuario_id = tipo_usuario_id;
-        this.especialidade_id = especialidade_id;
+        this.especialidadeId = especialidadeId;
+        this.tipoUsuarioId = tipoUsuarioId;
     }
 
-    public UsuarioDTO() {
-    }
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getNomeUsuario() {
-        return nomeUsuario;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeUsuario(String nomeUsuario) {
-        this.nomeUsuario = nomeUsuario;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getCpf() {
@@ -78,27 +77,28 @@ public class UsuarioDTO implements Serializable {
         this.senha = senha;
     }
 
-    public boolean isBloqueio() {
+    public Boolean getBloqueio() {
         return bloqueio;
     }
 
-    public void setBloqueio(boolean bloqueio) {
+    public void setBloqueio(Boolean bloqueio) {
         this.bloqueio = bloqueio;
     }
 
-    public int getTipo_usuario_id() {
-        return tipo_usuario_id;
+    public EspecialidadeDTO getEspecialidadeId() {
+        return especialidadeId;
     }
 
-    public void setTipo_usuario_id(int tipo_usuario_id) {
-        this.tipo_usuario_id = tipo_usuario_id;
+    public void setEspecialidadeId(EspecialidadeDTO especialidadeId) {
+        this.especialidadeId = especialidadeId;
     }
 
-    public int getEspecialidade_id() {
-        return especialidade_id;
+    public TipoUsuarioDTO getTipoUsuarioId() {
+        return tipoUsuarioId;
     }
 
-    public void setEspecialidade_id(int especialidade_id) {
-        this.especialidade_id = especialidade_id;
+    public void setTipoUsuarioId(TipoUsuarioDTO tipoUsuarioId) {
+        this.tipoUsuarioId = tipoUsuarioId;
     }
+
 }
