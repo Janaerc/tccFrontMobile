@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<androidx.core.widget.NestedScrollView
-        android:fillViewport="true"
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/logoUFOT"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -43,7 +41,7 @@
             <EditText
                 android:id="@+id/editTextCPFLogin"
                 style="@style/editText"
-                android:inputType="text"
+                android:inputType="number"
                 android:hint="CPF"
                 android:textSize="20dp"
                 android:drawableRight="@drawable/baseline_person_2_24"
@@ -90,6 +88,7 @@
                     style="@style/linkAcesso"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:linksClickable="false"
                     android:onClick="esqueceuSenha"
                     android:text="Esqueceu a Senha?"
                     app:layout_constraintEnd_toEndOf="parent"

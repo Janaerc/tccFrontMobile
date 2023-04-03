@@ -29,6 +29,7 @@
 
         <EditText
             android:id="@+id/editTextName"
+            style="@style/editText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="15sp"
@@ -38,6 +39,7 @@
 
         <EditText
             android:id="@+id/editTextCpf"
+            style="@style/editText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="15sp"
@@ -49,6 +51,7 @@
 
         <EditText
             android:id="@+id/editTextTelefone"
+            style="@style/editText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="15sp"
@@ -60,19 +63,19 @@
 
         <EditText
             android:id="@+id/editTextTextEmailAddress"
+            style="@style/editText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="15sp"
             android:layout_marginRight="15sp"
             android:layout_marginBottom="15sp"
-            android:layout_weight="1"
-            android:ems="10"
             android:hint="Seu Email"
             android:inputType="textEmailAddress" />
 
 
         <TextView
             android:id="@+id/primeiro_ac3"
+            style="@style/editText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -87,6 +90,7 @@
 
         <EditText
             android:id="@+id/editTextPassword"
+            style="@style/editText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="15sp"
@@ -101,6 +105,7 @@
 
         <TextView
             android:id="@+id/primeiro_ac2"
+            style="@style/editText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -115,6 +120,7 @@
 
         <EditText
             android:id="@+id/editTextPassword2"
+            style="@style/editText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="15sp"
