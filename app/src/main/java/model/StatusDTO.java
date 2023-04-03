@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 
 
-class StatusDTO implements Serializable{
+public class StatusDTO implements Serializable{
     private Integer id;
     private String nome;
 

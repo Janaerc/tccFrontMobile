@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 
-class OrdemServicoDTO implements Serializable {
+public class OrdemServicoDTO implements Serializable {
     private Integer id;
     private String descricao;
     private Date dataAbertura;
