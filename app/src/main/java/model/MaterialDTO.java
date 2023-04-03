@@ -1,25 +1,28 @@
 package model;
 
-public class Especialidade {
+import java.io.Serializable;
 
-
-    private int id;
+/**
+ *
+ * @author nicol
+ */
+public class MaterialDTO implements Serializable{
+    private Integer id;
     private String nome;
 
-
-    public Especialidade() {
+    public MaterialDTO() {
     }
 
-    public Especialidade(int id, String nome) {
+    public MaterialDTO(Integer id, String nome) {
         this.id = id;
         this.nome = nome;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -30,4 +33,5 @@ public class Especialidade {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
 }
