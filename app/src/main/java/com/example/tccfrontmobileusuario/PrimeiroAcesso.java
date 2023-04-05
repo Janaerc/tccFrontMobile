@@ -30,7 +30,7 @@ public class PrimeiroAcesso extends AppCompatActivity {
         nomeUsuario = findViewById(R.id.editTextName);
         telefoneUsuario = findViewById(R.id.editTextTelefone);
         cpfUsuario = findViewById(R.id.editTextCpf);
-        emailUsuario = findViewById(R.id.editTextTextEmailAddress);
+        emailUsuario = findViewById(R.id.editTextEmailAddress);
         senhaUsuario = findViewById(R.id.editTextPassword);
         senhaUsuario2 = findViewById(R.id.editTextPassword2);
     }

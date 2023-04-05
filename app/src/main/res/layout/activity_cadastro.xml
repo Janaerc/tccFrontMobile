@@ -3,7 +3,174 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".Cadastro">
+
+
+
+    <ImageView
+        android:id="@+id/imagemufprCadastro"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:src="@drawable/ufpr_primeiroacesso"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        />
+
+    <ImageView
+        android:id="@+id/closebutton2"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/baseline_close_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="10dp"
+        />
+
+
+    <TextView
+        android:id="@+id/cadastro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20sp"
+        android:text="CADASTRO"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/imagemufprCadastro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:id="@+id/conteinerComponentsCadastro"
+        style="@style/ConteinerComponents"
+        app:layout_constraintTop_toBottomOf="@id/cadastro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+
+        />
+
+
+    <EditText
+        android:id="@+id/editTextNameCadastro"
+        style="@style/editText"
+        app:layout_constraintTop_toTopOf="@id/conteinerComponentsCadastro"
+        android:drawableRight="@drawable/baseline_person_2_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:hint="Seu nome"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextCpfCadastro"
+        style="@style/editText"
+        app:layout_constraintTop_toBottomOf="@id/editTextNameCadastro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:hint="Seu CPF"
+        android:drawableRight="@drawable/document"
+        android:inputType="text" />
+
+
+    <EditText
+        android:id="@+id/editTextTelefoneCadastro"
+        style="@style/editText"
+        app:layout_constraintTop_toBottomOf="@id/editTextCpfCadastro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:hint="Seu Telefone"
+        android:drawableRight="@drawable/smartphone"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextEmailAddressCadastro"
+        style="@style/editText"
+        app:layout_constraintTop_toBottomOf="@id/editTextTelefoneCadastro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:hint="Seu Email"
+        android:drawableRight="@drawable/email"
+        android:inputType="textEmailAddress" />
+
+
+    <EditText
+        android:id="@+id/editTextPasswordCadastro"
+        style="@style/editText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        app:layout_constraintTop_toBottomOf="@id/editTextEmailAddressCadastro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:inputType="textPassword"
+        android:hint="Sua Senha"
+        android:drawableRight="@drawable/baseline_remove_eye_24"
+        />
+
+
+    <EditText
+        android:id="@+id/editTextPassword2Cadastro"
+        style="@style/editText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@id/editTextPasswordCadastro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Confirme a Senha"
+        android:drawableRight="@drawable/baseline_remove_eye_24"
+        android:drawableTint="@color/gray"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSalvarCadastro"
+        style="@style/Button_yellow"
+        android:onClick="salvarCadastro"
+        android:text="Salvar"
+        app:layout_constraintTop_toBottomOf="@id/editTextPassword2Cadastro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+
+
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
