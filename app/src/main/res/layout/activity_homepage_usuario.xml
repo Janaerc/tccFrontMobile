@@ -4,6 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomepageUsuario">
+    tools:context=".HomepageUsuario"
+    android:background="@color/blue"
+
+    >
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonNovoChamado"
+        style="@style/Button_yellow"
+        android:onClick="novoChamado"
+        android:text="Novo Chamado"
+        android:textAllCaps="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
