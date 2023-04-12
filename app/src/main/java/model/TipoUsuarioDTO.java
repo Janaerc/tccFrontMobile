@@ -32,4 +32,8 @@ public class TipoUsuarioDTO implements Serializable {
     }
 
 
+    @Override
+    public String toString() {
+        return String.valueOf(id);
+    }
 }

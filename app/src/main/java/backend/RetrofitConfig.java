@@ -8,19 +8,17 @@ public class RetrofitConfig {
 
     private final Retrofit retrofit;
 
-    public RetrofitConfig(){
+
+    public RetrofitConfig() {
         this.retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:5000/")
+                .baseUrl("http://10.0.2.2:8080/manutencaoufpr/webresources/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
 
-    public UsuarioService getUsuarioService(){
+    public UsuarioService getUsuarioService() {
         return this.retrofit.create(UsuarioService.class);
     }
-
-
-
 
 
 }
