@@ -32,4 +32,9 @@ public class EspecialidadeDTO  implements Serializable{
         this.nome = nome;
     }
 
+    @Override
+    public String toString() {
+        return String.valueOf(id);
+    }
+
 }
