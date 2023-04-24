@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -9,9 +10,34 @@
         android:fullBackupContent="@xml/backup_rules"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.TccFrontMobileUsuario"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".EsqueceuSenha"
+            android:exported="false" />
+        <activity
+            android:name=".NovoChamado"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.NovoChamado"
+            android:exported="false"
+            android:label="@string/title_activity_novo_chamado" />
+        <activity
+            android:name=".SobreApp"
+            android:exported="false" />
+        <activity
+            android:name=".Cadastro"
+            android:exported="false" />
+        <activity
+            android:name=".DetalhesChamadoAberto"
+            android:exported="false" />
+        <activity
+            android:name=".DetalhesChamadoEmAndamento"
+            android:exported="false" />
+        <activity
+            android:name=".HomepageUsuario"
+            android:exported="false" />
         <activity
             android:name=".PrimeiroAcesso"
             android:exported="false" />

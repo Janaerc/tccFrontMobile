@@ -23,6 +23,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void esqueceuSenha(View view){
+        Intent it = new Intent( this, EsqueceuSenha.class);
+        startActivity(it);
+
+
+
+    }
+
+
+
 
 
 
