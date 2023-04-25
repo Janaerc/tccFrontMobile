@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 
 import backend.RetrofitConfig;
+import backend.ValidaCPF;
 import model.EspecialidadeDTO;
 import model.TipoUsuarioDTO;
 import model.UsuarioDTO;
@@ -72,6 +73,10 @@ public class PrimeiroAcesso extends AppCompatActivity {
         }
         if (senhaUsuario.getText().toString().isEmpty()) {
             Toast.makeText(this, "Informe uma Senha válida", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (!ValidaCPF.isCPF(cpfUsuario.getText().toString())) {
+            Toast.makeText(this, "Informe um CPF válido", Toast.LENGTH_SHORT).show();
             return;
         }
 
