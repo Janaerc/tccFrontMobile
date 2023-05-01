@@ -28,7 +28,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:title="Detalhes Do Chamado"
                 android:background="@color/yellow"
-                android:titleMarginLeft="100dp"
                 android:titleMarginStart="50dp"
 
                 />
