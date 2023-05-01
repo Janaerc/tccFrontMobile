@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@id/imagemufprSobre"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:drawableRight="@drawable/seta"
+        android:drawableRight="@drawable/seta_open"
         />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -66,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonPoliticaPrivacidade"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:drawableRight="@drawable/seta"
+        android:drawableRight="@drawable/seta_open"
         />
 
     <TextView

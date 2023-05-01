@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/cadastro_operario" android:title="@string/cadastro_operario"
+        android:icon="@drawable/baseline_person_2_24" android:iconTint="@color/blue" app:showAsAction="never"  android:iconGravity="end"  android:iconSize="10dp"/>
+
+
+    <item android:id="@+id/sobreApp" android:title="@string/sobre"
+        android:icon="@drawable/sobre" android:iconTint="@color/blue" app:showAsAction="never"  android:iconGravity="end" android:iconSize="10dp"/>
+
+
+    <item android:id="@+id/logout" android:title="@string/logout"
+        android:icon="@drawable/logout"  android:iconTint="@color/blue" app:showAsAction="never"  android:iconGravity="end" android:iconSize="10dp" />
+
+</menu>

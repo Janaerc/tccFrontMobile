@@ -31,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
     public void logar (View view){
         LoginDTO login = new LoginDTO();
         login.setCpf(ETcpf.getText().toString());
+
         login.setSenha(ETsenha.getText().toString());
+
 
         Call<UsuarioDTO> call1 = new RetrofitConfig().getUsuarioService().login(login);
         call1.enqueue(new Callback<UsuarioDTO>() {
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<UsuarioDTO> call, Response<UsuarioDTO> response) {
                 if (response.isSuccessful()) {
                     UsuarioDTO usuarioDTO = response.body();
+
                     if(usuarioDTO.getTipoUsuarioId().getId() == 1) {
                         Intent intent = new Intent(MainActivity.this, HomepageUsuario.class);
                         intent.putExtra("usuario", usuarioDTO);
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             }
+
             @Override
             public void onFailure(Call<UsuarioDTO> call, Throwable t) {
                 t.printStackTrace();
