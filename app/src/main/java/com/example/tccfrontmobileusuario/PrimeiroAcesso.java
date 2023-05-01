@@ -1,10 +1,13 @@
 package com.example.tccfrontmobileusuario;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -35,6 +38,36 @@ public class PrimeiroAcesso extends AppCompatActivity {
         senhaUsuario = findViewById(R.id.editTextPassword);
         senhaUsuario2 = findViewById(R.id.editTextPassword2);
     }
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_deslogado, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.sobreApp:
+                Intent intent = new Intent(PrimeiroAcesso.this, SobreApp.class);
+                startActivity(intent);
+                finish();
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
+
+
+
+
+
+
 
     public void salvarCadastro(View view) {
 
