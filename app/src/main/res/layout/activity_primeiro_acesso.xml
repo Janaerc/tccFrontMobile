@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".PrimeiroAcesso">
+    tools:context=".PrimeiroAcesso"
+    android:background="@color/white"
+    >
 
 
 <ImageView
@@ -29,6 +31,17 @@
         android:layout_margin="10dp"
         />
 
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/menuopcoesbranco"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        android:onClick="menuDeslogado"
+        />
+
 
     <TextView
         android:id="@+id/primeiro_ac"
@@ -48,6 +61,8 @@
     <View
         android:id="@+id/conteinerComponents"
         style="@style/ConteinerComponents"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintTop_toBottomOf="@id/primeiro_ac"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,7 +84,8 @@
         android:layout_marginStart="15sp"
         android:layout_marginEnd="15sp"
         android:hint="Seu nome"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColorHint="@color/gray"/>
 
     <EditText
         android:id="@+id/editTextCpf"
@@ -84,7 +100,8 @@
         android:layout_marginEnd="15sp"
         android:hint="Seu CPF"
         android:drawableRight="@drawable/document"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColorHint="@color/gray"/>
 
 
     <EditText
@@ -100,7 +117,8 @@
         android:layout_marginEnd="15sp"
         android:hint="Seu Telefone"
         android:drawableRight="@drawable/smartphone"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColorHint="@color/gray"/>
 
     <EditText
         android:id="@+id/editTextEmailAddress"
@@ -115,7 +133,8 @@
         android:layout_marginEnd="15sp"
         android:hint="Seu Email"
         android:drawableRight="@drawable/email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/gray"/>
 
 
     <EditText
@@ -132,7 +151,7 @@
         android:inputType="textPassword"
         android:hint="Sua Senha"
         android:drawableRight="@drawable/baseline_remove_eye_24"
-        />
+        android:textColorHint="@color/gray"/>
 
 
     <EditText
@@ -150,6 +169,7 @@
         android:hint="Confirme a Senha"
         android:drawableRight="@drawable/baseline_remove_eye_24"
         android:drawableTint="@color/gray"
+        android:textColorHint="@color/gray"
         />
 
 

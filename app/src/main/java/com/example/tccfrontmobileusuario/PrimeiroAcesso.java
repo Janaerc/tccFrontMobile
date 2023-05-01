@@ -39,7 +39,9 @@ public class PrimeiroAcesso extends AppCompatActivity {
         senhaUsuario2 = findViewById(R.id.editTextPassword2);
     }
 
-
+    public void menuDeslogado(View view) {
+        openOptionsMenu();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

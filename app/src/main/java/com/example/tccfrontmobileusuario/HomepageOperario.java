@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class HomepageOperario extends AppCompatActivity {
@@ -15,7 +17,14 @@ public class HomepageOperario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage_operario);
+
     }
+
+    public void menuOperario(View view) {
+        openOptionsMenu();
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

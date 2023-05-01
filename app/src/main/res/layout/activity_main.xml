@@ -7,10 +7,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/logoUFOT"
+        android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+        android:background="@color/white">
 
 
 
@@ -23,6 +24,7 @@
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:textColor="@color/blue"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
@@ -43,6 +45,7 @@
                 style="@style/editText"
                 android:inputType="number"
                 android:hint="CPF"
+                android:textColorHint="@color/blue"
                 android:textSize="20dp"
                 android:drawableRight="@drawable/baseline_person_2_24"
                 app:layout_constraintStart_toStartOf="@id/containerComponents"
@@ -54,6 +57,7 @@
             <EditText
                 android:id="@+id/editTextTextPassword"
                 android:hint="Senha"
+                android:textColorHint="@color/blue"
                 style="@style/editText"
                 android:textSize="20dp"
                 android:drawableRight="@drawable/baseline_remove_eye_24"
@@ -91,6 +95,7 @@
                     android:linksClickable="false"
                     android:onClick="esqueceuSenha"
                     android:text="Esqueceu a Senha?"
+                    android:textColor="@color/gray"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="parent" />
@@ -102,6 +107,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="primeiroAcesso"
                     android:text="Primeiro Acesso?"
+                    android:textColor="@color/gray"
                     android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

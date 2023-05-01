@@ -4,7 +4,7 @@
 
 
     <item android:id="@+id/sobreApp" android:title="@string/sobre"
-        android:icon="@drawable/sobre" android:iconTint="@color/blue" app:showAsAction="never"  android:iconGravity="end" android:iconSize="10dp"/>
+        android:icon="@drawable/sobre" android:iconTint="@color/blue" app:showAsAction="never"/>
 
 
 </menu>

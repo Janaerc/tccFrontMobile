@@ -6,10 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -143,7 +146,10 @@ public class NovoChamado extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
+    public void voltarHome(View view) {
+        Intent intent = new Intent(NovoChamado.this, HomepageUsuario.class);
+        startActivity(intent);
+    }
 
 
 
