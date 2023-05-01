@@ -122,7 +122,7 @@
         android:textColor="@color/gray"
         android:textSize="15dp"
         app:layout_constraintTop_toBottomOf="@+id/predio_textview"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="@+id/view_detalhes" />
 
     <EditText
@@ -134,7 +134,7 @@
         android:layout_height="90sp"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="60dp"
-        android:hint=""
+
         android:inputType="text" />
 
     <TextView
@@ -209,9 +209,10 @@
 
     <Spinner
         android:id="@+id/campusSpinner"
+        android:textAppearance="@style/SpinnerTextStyle"
         android:layout_width="200dp"
         android:layout_height="35dp"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="30dp"
         app:layout_constraintStart_toEndOf="@id/campus_textview"
         app:layout_constraintTop_toTopOf="@id/campus_textview"
         android:background="@color/lightgray"
@@ -219,10 +220,11 @@
 
     <Spinner
         android:id="@+id/predioSpinner"
+        android:textAppearance="@style/SpinnerTextStyle"
         android:layout_marginTop="5dp"
         android:layout_width="200dp"
         android:layout_height="35dp"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="30dp"
         app:layout_constraintTop_toBottomOf="@id/campusSpinner"
         app:layout_constraintStart_toEndOf="@id/campus_textview"
         android:background="@color/lightgray"/>
