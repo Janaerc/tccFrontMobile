@@ -7,6 +7,57 @@
     tools:context=".DetalhesChamadoEmAndamento"
     android:background="@color/blue">
 
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:title="Detalhes Do Chamado"
+                android:background="@color/yellow"
+                android:titleMarginLeft="100dp"
+                android:titleMarginStart="50dp"
+
+                />
+            <ImageView
+                android:id="@+id/retornoHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/retorno"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="10dp"
+                android:onClick="voltarHome"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
+
+
+
+
+
+
     <View
         android:id="@+id/view_detalhes"
         android:layout_width="match_parent"
@@ -14,7 +65,7 @@
         android:background="@drawable/container_components"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="65dp"
         android:layout_marginHorizontal="20dp"
 
         />

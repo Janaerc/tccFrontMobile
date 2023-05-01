@@ -84,6 +84,18 @@
         android:textSize="16dp"
         />
 
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/menuopcoesbranco"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="20dp"
+        android:onClick="menuOperario"
+        />
+
     <TextView
         android:id="@+id/textoEquipeDesenvolvimento"
         android:layout_width="200dp"
@@ -100,10 +112,10 @@
 
 
     <TextView
-        android:id="@+id/textoEquipeDesenvolvimentoNomes"
+        android:id="@+id/textoEquipeDesenvolvimentoNomes1"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:text="Janaina Keroline Ercole Nicolle da Silva Costa Rafael Prestes Tombolato"
+        android:text="Janaina Keroline Ercole"
         android:textAlignment="textStart"
         app:layout_constraintTop_toBottomOf="@id/textoEquipeDesenvolvimento"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,6 +125,35 @@
         android:textSize="12dp"
         />
 
+    <TextView
+        android:id="@+id/textoEquipeDesenvolvimentoNomes2"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="Nicolle da Silva Costa"
+        android:textAlignment="textStart"
+        app:layout_constraintTop_toBottomOf="@id/textoEquipeDesenvolvimentoNomes1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="2dp"
+        android:textSize="12dp"
+        />
+    <TextView
+        android:id="@+id/textoEquipeDesenvolvimentoNomes3"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="Rafael Prestes Tombolato"
+        android:textAlignment="textStart"
+        app:layout_constraintTop_toBottomOf="@id/textoEquipeDesenvolvimentoNomes2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="2dp"
+        android:textSize="12dp"
+        />
+
+
+
 
 
     <TextView
@@ -121,7 +162,7 @@
         android:layout_height="wrap_content"
         android:text="Equipe técnica"
         android:textAlignment="textEnd"
-        app:layout_constraintTop_toBottomOf="@id/textoEquipeDesenvolvimentoNomes"
+        app:layout_constraintTop_toBottomOf="@id/textoEquipeDesenvolvimentoNomes3"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
@@ -131,12 +172,39 @@
 
 
     <TextView
-        android:id="@+id/textoEquipeTecnicaNomes"
+        android:id="@+id/textoEquipeTecnicaNomes1"
         android:layout_width="90dp"
         android:layout_height="wrap_content"
-        android:text="Responsável 1 Responsável 2 Responsável 3"
+        android:text="Responsável 1"
         android:textAlignment="textEnd"
         app:layout_constraintTop_toBottomOf="@id/textoEquipeTecnica"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="5dp"
+        android:textSize="12dp"
+        />
+
+    <TextView
+        android:id="@+id/textoEquipeTecnicaNomes2"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:text="Responsável 2"
+        android:textAlignment="textEnd"
+        app:layout_constraintTop_toBottomOf="@id/textoEquipeTecnicaNomes1"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="5dp"
+        android:textSize="12dp"
+        />
+    <TextView
+        android:id="@+id/textoEquipeTecnicaNomes3"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:text="Responsável 3"
+        android:textAlignment="textEnd"
+        app:layout_constraintTop_toBottomOf="@id/textoEquipeTecnicaNomes2"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"

@@ -29,6 +29,17 @@
         android:layout_margin="10dp"
         />
 
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/menuopcoesbranco"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        android:onClick="menuDeslogado"
+        />
+
 
     <TextView
         android:id="@+id/primeiro_ac"

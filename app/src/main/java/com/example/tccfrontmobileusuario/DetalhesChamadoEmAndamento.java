@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 public class DetalhesChamadoEmAndamento extends AppCompatActivity {
@@ -46,6 +47,10 @@ public class DetalhesChamadoEmAndamento extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void voltarHome(View view) {
+        Intent intent = new Intent(DetalhesChamadoEmAndamento.this, HomepageUsuario.class);
+        startActivity(intent);
+    }
 
 
 
