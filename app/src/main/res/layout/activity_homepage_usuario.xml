@@ -69,21 +69,19 @@
         />
 
 
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonNovoChamado"
         style="@style/Button_yellow"
+        android:layout_marginTop="40dp"
+        android:drawableRight="@drawable/novochamado"
         android:onClick="novoChamado"
+        android:padding="20sp"
         android:text="Novo Chamado"
         android:textAllCaps="true"
         android:textSize="25sp"
-        app:layout_constraintTop_toBottomOf="@id/container_user"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:drawableRight="@drawable/novochamado"
-        android:padding="20sp"
-        />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_user" />
 
     <TextView
         android:id="@+id/meuschamados"
