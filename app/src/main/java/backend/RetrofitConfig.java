@@ -11,7 +11,7 @@ public class RetrofitConfig {
 
     public RetrofitConfig() {
         this.retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:8080/manutencaoufpr/webresources/")
+                .baseUrl("http://10.0.2.2:8080/ManutencaoUFPR-WS-Rest/webresources/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
@@ -20,5 +20,7 @@ public class RetrofitConfig {
         return this.retrofit.create(UsuarioService.class);
     }
 
+    public CampusService getCampusService() {return this.retrofit.create(CampusService.class);}
 
+    public PredioService getPredioService() {return this.retrofit.create(PredioService.class);}
 }

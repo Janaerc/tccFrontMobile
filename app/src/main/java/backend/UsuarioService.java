@@ -14,6 +14,6 @@ public interface UsuarioService {
     @POST("usuario")
     Call<UsuarioDTO> cadastrarUsuario(@Body UsuarioDTO usuarioDTO);
 
-    @POST("login")
+    @POST("usuario/login")
     Call<UsuarioDTO> login(@Body LoginDTO loginDTO);
 }

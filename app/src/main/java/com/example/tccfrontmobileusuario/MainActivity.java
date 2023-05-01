@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     public void logar (View view){
         LoginDTO login = new LoginDTO();
         login.setCpf(ETcpf.getText().toString());
-        login.setSenha(ETcpf.getText().toString());
+        login.setSenha(ETsenha.getText().toString());
 
         Call<UsuarioDTO> call1 = new RetrofitConfig().getUsuarioService().login(login);
         call1.enqueue(new Callback<UsuarioDTO>() {
@@ -39,16 +39,26 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<UsuarioDTO> call, Response<UsuarioDTO> response) {
                 if (response.isSuccessful()) {
                     UsuarioDTO usuarioDTO = response.body();
-                    Intent intent = new Intent(MainActivity.this, HomepageUsuario.class);
-                    intent.putExtra("usuario", usuarioDTO);
-                    startActivity(intent);
-                    finish();
-                }
-                else {
-                    Toast.makeText(MainActivity.this, "CPF ou senha inválidos", Toast.LENGTH_SHORT).show();
+                    if(usuarioDTO.getTipoUsuarioId().getId() == 1) {
+                        Intent intent = new Intent(MainActivity.this, HomepageUsuario.class);
+                        intent.putExtra("usuario", usuarioDTO);
+                        startActivity(intent);
+                        finish();
+                    }
+                    if(usuarioDTO.getTipoUsuarioId().getId() == 2) {
+                        Intent intent = new Intent(MainActivity.this, HomepageOperario.class);
+                        intent.putExtra("usuario", usuarioDTO);
+                        startActivity(intent);
+                        finish();
+                    }
+                } else {
+                    if (response.code() == 401)
+                        Toast.makeText(MainActivity.this, "Login ou Senha incorretos", Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(MainActivity.this, "Erro de login", Toast.LENGTH_SHORT).show();
+
                 }
             }
-
             @Override
             public void onFailure(Call<UsuarioDTO> call, Throwable t) {
                 t.printStackTrace();
