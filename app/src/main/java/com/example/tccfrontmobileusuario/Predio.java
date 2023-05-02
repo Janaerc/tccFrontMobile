@@ -22,4 +22,24 @@ public class Predio {
     public int getCampusId() {
         return campusId;
     }
+
+    public Predio() {
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setCampusId(int campusId) {
+        this.campusId = campusId;
+    }
+
+    @Override
+    public String toString(){
+        return nome;
+    }
 }

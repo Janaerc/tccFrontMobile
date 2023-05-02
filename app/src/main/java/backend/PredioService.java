@@ -9,6 +9,6 @@ import retrofit2.http.Path;
 
 public interface PredioService {
 
-    @GET("lista/{selectedCampusId}")
-    Call<List<PredioDTO>> listarPredios(@Path("id") int id);
+    @GET("predio/lista/{selectedCampusId}")
+    Call<List<PredioDTO>> listarPredios(@Path("selectedCampusId") int selectedCampusId);
 }
