@@ -56,20 +56,13 @@
     android:layout_marginHorizontal="20dp"
     android:layout_marginBottom="80dp"
     android:orientation="vertical"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="@drawable/container_components">
 
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <View
-        android:id="@+id/view_detalhes"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/container_components"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/numero_chamado_detalhes"
@@ -85,7 +78,7 @@
         />
 
     <View
-        android:id="@+id/flag_aberto"
+        android:id="@+id/flag_aberto1"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@drawable/flag_aberto"
@@ -93,24 +86,17 @@
         app:layout_constraintEnd_toEndOf="@+id/view_detalhes"
         app:layout_constraintTop_toTopOf="@+id/view_detalhes"
         android:layout_marginTop="30dp"
-        android:layout_marginHorizontal="60dp"
+        android:layout_marginHorizontal="60dp">
 
-        />
+    </View>
 
 
-    <TextView
-        android:id="@+id/flag_andamento_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="aberto"
-        android:textSize="24dp"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@id/flag_aberto"
-        app:layout_constraintTop_toTopOf="@id/flag_aberto"
-        app:layout_constraintEnd_toEndOf="@id/flag_aberto"
-        app:layout_constraintBottom_toBottomOf="@id/flag_aberto"
 
-        />
+
+
+
+
+
 
     <TextView
         android:id="@+id/campus_textview"
