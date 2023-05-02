@@ -11,6 +11,6 @@ import retrofit2.http.GET;
 
 public interface CampusService {
 
-    @GET("lista")
+    @GET("campus/lista")
     Call<List<CampusDTO>> listarCampos();
 }

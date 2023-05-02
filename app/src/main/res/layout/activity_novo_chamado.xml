@@ -194,18 +194,15 @@
         />
 
 
-
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonSalvarChamado"
         style="@style/Button_yellow"
-        android:onClick="salvarChamado"
-        android:text="Salvar"
         android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/add_anexos"
-        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="cadastrarChamado"
+        android:text="Salvar"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_anexos" />
 
     <Spinner
         android:id="@+id/campusSpinner"

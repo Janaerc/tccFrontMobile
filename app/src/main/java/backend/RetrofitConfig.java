@@ -23,4 +23,6 @@ public class RetrofitConfig {
     public CampusService getCampusService() {return this.retrofit.create(CampusService.class);}
 
     public PredioService getPredioService() {return this.retrofit.create(PredioService.class);}
+
+    public ChamadoService getChamadoService() {return this.retrofit.create(ChamadoService.class);}
 }

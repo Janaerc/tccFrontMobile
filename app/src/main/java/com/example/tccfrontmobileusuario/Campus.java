@@ -16,5 +16,21 @@ public class Campus {
     public String getNome() {
         return nome;
     }
+
+    public Campus() {
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    @Override
+    public String toString(){
+        return nome;
+    }
 }
 
