@@ -184,7 +184,7 @@ public class NovoChamado extends AppCompatActivity {
             String timestamp = agora.format(formato);
             SimpleDateFormat formatoTimestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date date = formatoTimestamp.parse(timestamp);
-       // chamado.setDataHora(date);
+        //chamado.setDataHora(date);
         //verificar o problema do status
 
         System.out.println(date);
