@@ -41,6 +41,7 @@ public class PrimeiroAcesso extends AppCompatActivity {
 
     public void menuDeslogado(View view) {
         openOptionsMenu();
+        Toast.makeText(PrimeiroAcesso.this, "entrou no menudeslogado", Toast.LENGTH_SHORT).show();
     }
 
     @Override
