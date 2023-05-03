@@ -12,8 +12,15 @@ import android.view.View;
 import android.widget.Toast;
 import android.widget.Button;
 import android.widget.TextView;
-import model.UsuarioDTO;
 
+import java.util.List;
+
+import backend.RetrofitConfig;
+import model.ChamadoDTO;
+import model.UsuarioDTO;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class HomepageUsuario extends AppCompatActivity {
@@ -21,6 +28,9 @@ public class HomepageUsuario extends AppCompatActivity {
     UsuarioDTO usuarioDTO;
     Button botaoNovoChamado;
     TextView saudacao, sigla;
+
+    private List<ChamadoDTO> chamadoDTO;
+    private List<Chamado> chamados;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +51,7 @@ public class HomepageUsuario extends AppCompatActivity {
         sigla.setText(iniciais);
         saudacao.setText(usuarioDTO.getNome());
 
+        listaChamado();
 
     }
 
@@ -49,6 +60,41 @@ public class HomepageUsuario extends AppCompatActivity {
         intent.putExtra("usuario", usuarioDTO);
         startActivity(intent);
         finish();
+    }
+
+    public void listaChamado(){
+        Call<List<ChamadoDTO>> call = new RetrofitConfig().getChamadoService().listaDeChamados(usuarioDTO.getId());
+        call.enqueue(new Callback<List<ChamadoDTO>>() {
+            @Override
+            public void onResponse(Call<List<ChamadoDTO>> call, Response<List<ChamadoDTO>> response) {
+                System.out.println("veio resposta");
+                chamadoDTO = response.body();
+                if(chamadoDTO != null) {
+                    for (ChamadoDTO c : chamadoDTO) {
+                        Chamado chamado = new Chamado();
+                        chamado.setUsuarioId(c.getUsuarioId());
+                        chamado.setDescricaoLocal(c.getDescricaoLocal());
+                        chamado.setDescricaoProblema(c.getDescricaoProblema());
+                        chamado.setUsuarioId(c.getUsuarioId());
+                        chamado.setPredioId(c.getPredioId());
+                        chamado.setDataHora(c.getDataHora());
+                        chamado.setId(c.getId());
+                        chamado.setOrdemServicoId(c.getOrdemServicoId());
+                        chamado.setStatusId(c.getStatusId());
+                        System.out.println(chamado);
+                        //chamados.add(chamado);
+                    }
+                }else {
+                        System.out.println(chamadoDTO);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<ChamadoDTO>> call, Throwable t) {
+
+            }
+        });
     }
 
 
