@@ -25,6 +25,8 @@ import java.util.Date;
 import java.util.List;
 
 import backend.RetrofitConfig;
+import bean.Campus;
+import bean.Predio;
 import model.CampusDTO;
 import model.ChamadoDTO;
 import model.PredioDTO;

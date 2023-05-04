@@ -1,4 +1,4 @@
-package com.example.tccfrontmobileusuario;
+package bean;
 
 public class Campus {
     private int id;

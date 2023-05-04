@@ -1,4 +1,4 @@
-package com.example.tccfrontmobileusuario;
+package bean;
 
 public class Predio {
     private int id;
