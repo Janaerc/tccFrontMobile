@@ -16,6 +16,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import backend.RetrofitConfig;
+import bean.Chamado;
 import model.ChamadoDTO;
 import model.UsuarioDTO;
 import retrofit2.Call;

@@ -1,4 +1,4 @@
-package com.example.tccfrontmobileusuario;
+package bean;
 
 import java.util.Date;
 

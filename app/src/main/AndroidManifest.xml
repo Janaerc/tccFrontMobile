@@ -20,10 +20,10 @@
             android:name=".DetalhesOrdemServicoAberta"
             android:exported="false" />
         <activity
-            android:name=".CadastroOperario"
+            android:name=".operario.CadastroOperario"
             android:exported="false" />
         <activity
-            android:name=".HomepageOperario"
+            android:name=".operario.HomepageOperario"
             android:exported="false" />
         <activity
             android:name=".EsqueceuSenha"
