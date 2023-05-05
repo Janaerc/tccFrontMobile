@@ -16,4 +16,7 @@ public interface ChamadoService {
 
     @GET("chamado/listaChamados/{idUsuario}")
     Call<List<ChamadoDTO>> listaDeChamados(@Path("idUsuario") int idUsuario);
+
+    @GET("chamado/chamadoId/{id}")
+    Call<ChamadoDTO> chamadoPorId (@Path("id") int id);
 }
