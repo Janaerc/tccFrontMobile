@@ -1,77 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="Horizontal"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="180dp"
     android:layout_marginHorizontal="10dp"
     android:layout_marginTop="10dp"
     android:layout_marginBottom="5dp"
     android:background="@color/white"
+    android:padding="5dp"
+
     >
 
 
-
-
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="180dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/txtNumeroChamado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="#20221103012"
-        android:textSize="20dp"
-        android:textColor="@color/gray"
-        android:padding="10dp"
-        />
+        <TextView
+            android:id="@+id/txtNumeroChamado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
 
-    <TextView
-        android:id="@+id/txtNomeCampus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Politécnico"
-        android:textSize="35dp"
-        android:textColor="@color/gray"
-        android:padding="10dp"
-        />
+            android:text="#20221103012"
+            android:textColor="@color/gray"
+            android:textSize="15dp" />
 
-    <TextView
-        android:id="@+id/txtNomePredio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="SEPT"
-        android:textSize="35dp"
-        android:textColor="@color/gray"
-        android:padding="10dp"
-        />
+        <TextView
+            android:id="@+id/txtNomeCampus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Politécnico"
+            android:textColor="@color/gray"
+            android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/txtDescricaoLocal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="banheiro segundo andar bloco A"
-        android:textSize="20dp"
-        android:textColor="@color/gray"
-        android:padding="10dp"
-        />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/txtNomePredio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="SEPT"
+            android:textColor="@color/gray"
+            android:textSize="25dp"
+
+            />
+
+        <TextView
+            android:id="@+id/txtDescricaoLocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="banheiro segundo andar bloco A"
+            android:textColor="@color/gray"
+            android:textSize="20dp" />
+    </LinearLayout>
 
 
 
 
  <LinearLayout
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
+     android:layout_width="180dp"
+     android:layout_height="180dp"
      android:orientation="vertical">
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="50dp">
     <TextView
         android:id="@+id/txtStatusChamado"
         android:layout_width="wrap_content"
@@ -80,14 +77,30 @@
         android:text="Em Andamento"
         android:textSize="14dp"
         android:textColor="@color/gray"
-        android:padding="10dp"
+
         />
+
+         <ImageView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="end"
+             android:src="@drawable/status_circulo"
+             android:paddingTop="8dp"
+
+
+             />
+
+
+     </LinearLayout>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/seta_open"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="40dp"
+        android:layout_gravity="end"
+        />
+
  </LinearLayout>
 
 
