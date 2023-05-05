@@ -4,24 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".Cadastro">
-
+    tools:context=".Cadastro"
+    android:background="@color/white"
+    >
 
 
     <ImageView
-        android:id="@+id/imagemufprCadastro"
+        android:id="@+id/imagemufpr"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         android:src="@drawable/ufpr_primeiroacesso"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/conteinerComponentsCadastro"
+        style="@style/ConteinerComponents"
+        android:layout_height="450dp"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/imagemufpr"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
-
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
+
+
     <ImageView
-        android:id="@+id/closebutton2"
+        android:id="@+id/closebutton"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@drawable/baseline_close_24"
@@ -29,8 +42,6 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="10dp"
         />
-
-
 
     <ImageView
         android:id="@+id/menu"
@@ -40,130 +51,131 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="10dp"
+        android:onClick="menuUsuario"
+        android:cropToPadding="true"
+        android:scaleType="centerCrop"
         />
 
 
-
-
     <TextView
-        android:id="@+id/cadastro"
+        android:id="@+id/primeiro_ac"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20sp"
-        android:text="CADASTRO"
+
+        android:text="Cadastro"
         android:textAlignment="center"
         android:textColor="@color/yellow"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/imagemufprCadastro"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <View
-        android:id="@+id/conteinerComponentsCadastro"
-        style="@style/ConteinerComponents"
-        app:layout_constraintTop_toBottomOf="@id/cadastro"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-
-
-        />
-
+        app:layout_constraintEnd_toEndOf="@id/conteinerComponentsCadastro"
+        app:layout_constraintStart_toStartOf="@id/conteinerComponentsCadastro"
+        app:layout_constraintTop_toTopOf="@id/conteinerComponentsCadastro" />
 
     <EditText
-        android:id="@+id/editTextNameCadastro"
+        android:id="@+id/editTextName"
         style="@style/editText"
-        app:layout_constraintTop_toTopOf="@id/conteinerComponentsCadastro"
+        android:textColor="@color/black"
         android:drawableRight="@drawable/baseline_person_2_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/conteinerComponentsCadastro"
+        app:layout_constraintStart_toStartOf="@id/conteinerComponentsCadastro"
+        app:layout_constraintTop_toTopOf="@id/conteinerComponentsCadastro"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="15sp"
         android:layout_marginEnd="15sp"
         android:hint="Seu nome"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_marginTop="40dp"
+        android:textColorHint="@color/gray"/>
 
     <EditText
-        android:id="@+id/editTextCpfCadastro"
+        android:id="@+id/editTextCpf"
         style="@style/editText"
-        app:layout_constraintTop_toBottomOf="@id/editTextNameCadastro"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/editTextName"
+        app:layout_constraintEnd_toEndOf="@id/conteinerComponentsCadastro"
+        app:layout_constraintStart_toStartOf="@id/conteinerComponentsCadastro"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10sp"
         android:layout_marginStart="15sp"
         android:layout_marginEnd="15sp"
         android:hint="Seu CPF"
         android:drawableRight="@drawable/document"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColorHint="@color/gray"/>
 
 
     <EditText
-        android:id="@+id/editTextTelefoneCadastro"
+        android:id="@+id/editTextTelefone"
         style="@style/editText"
-        app:layout_constraintTop_toBottomOf="@id/editTextCpfCadastro"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/editTextCpf"
+        app:layout_constraintEnd_toEndOf="@id/conteinerComponentsCadastro"
+        app:layout_constraintStart_toStartOf="@id/conteinerComponentsCadastro"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10sp"
         android:layout_marginStart="15sp"
         android:layout_marginEnd="15sp"
         android:hint="Seu Telefone"
         android:drawableRight="@drawable/smartphone"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColorHint="@color/gray"/>
 
     <EditText
-        android:id="@+id/editTextEmailAddressCadastro"
+        android:id="@+id/editTextEmailAddress"
         style="@style/editText"
-        app:layout_constraintTop_toBottomOf="@id/editTextTelefoneCadastro"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/editTextTelefone"
+        app:layout_constraintEnd_toEndOf="@id/conteinerComponentsCadastro"
+        app:layout_constraintStart_toStartOf="@id/conteinerComponentsCadastro"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10sp"
         android:layout_marginStart="15sp"
         android:layout_marginEnd="15sp"
         android:hint="Seu Email"
         android:drawableRight="@drawable/email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/gray"/>
 
 
     <EditText
-        android:id="@+id/editTextPasswordCadastro"
+        android:id="@+id/editTextPassword"
         style="@style/editText"
+        android:textColor="@color/black"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10sp"
         android:layout_marginStart="15sp"
         android:layout_marginEnd="15sp"
-        app:layout_constraintTop_toBottomOf="@id/editTextEmailAddressCadastro"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextEmailAddress"
+        app:layout_constraintEnd_toEndOf="@id/conteinerComponentsCadastro"
+        app:layout_constraintStart_toStartOf="@id/conteinerComponentsCadastro"
         android:inputType="textPassword"
         android:hint="Sua Senha"
         android:drawableRight="@drawable/baseline_remove_eye_24"
-        />
+        android:textColorHint="@color/gray"/>
 
 
     <EditText
-        android:id="@+id/editTextPassword2Cadastro"
+        android:id="@+id/editTextPassword2"
         style="@style/editText"
+        android:textColor="@color/black"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10sp"
         android:layout_marginStart="15sp"
         android:layout_marginEnd="15sp"
         android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/editTextPasswordCadastro"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextPassword"
+        app:layout_constraintEnd_toEndOf="@id/conteinerComponentsCadastro"
+        app:layout_constraintStart_toStartOf="@id/conteinerComponentsCadastro"
         android:hint="Confirme a Senha"
         android:drawableRight="@drawable/baseline_remove_eye_24"
         android:drawableTint="@color/gray"
+        android:textColorHint="@color/gray"
         />
 
 
@@ -172,11 +184,11 @@
         style="@style/Button_yellow"
         android:onClick="salvarCadastro"
         android:text="Salvar"
-        app:layout_constraintTop_toBottomOf="@id/editTextPassword2Cadastro"
+        app:layout_constraintTop_toBottomOf="@id/editTextPassword2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
 
+        />
 
 
 
