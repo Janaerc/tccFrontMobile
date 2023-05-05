@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import com.example.tccfrontmobileusuario.operario.CadastroOperario;
+
 import backend.RetrofitConfig;
 import backend.ValidaCPF;
 import model.EspecialidadeDTO;
@@ -37,6 +39,7 @@ public class PrimeiroAcesso extends AppCompatActivity {
         emailUsuario = findViewById(R.id.editTextEmailAddress);
         senhaUsuario = findViewById(R.id.editTextPassword);
         senhaUsuario2 = findViewById(R.id.editTextPassword2);
+
     }
 
     public void menuDeslogado(View view) {
@@ -64,7 +67,12 @@ public class PrimeiroAcesso extends AppCompatActivity {
     }
 
 
+public void closeActivity (View view) {
+    Intent intent = new Intent(PrimeiroAcesso.this, MainActivity.class);
+    startActivity(intent);
+    finish();
 
+}
 
 
 

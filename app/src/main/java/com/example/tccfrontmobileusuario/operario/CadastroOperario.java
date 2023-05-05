@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.tccfrontmobileusuario.MainActivity;
+import com.example.tccfrontmobileusuario.PrimeiroAcesso;
 import com.example.tccfrontmobileusuario.R;
 import com.example.tccfrontmobileusuario.SobreApp;
 
@@ -55,7 +57,12 @@ public class CadastroOperario extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void closeActivity (View view) {
+        Intent intent = new Intent(CadastroOperario.this, HomepageOperario.class);
+        startActivity(intent);
+        finish();
 
+    }
 
 
 

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.tccfrontmobileusuario.operario.CadastroOperario;
@@ -50,6 +51,12 @@ public class SobreApp extends AppCompatActivity {
     }
 
 
+    public void closeActivity (View view) {
+        Intent intent = new Intent(SobreApp.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+
+    }
 
 
 

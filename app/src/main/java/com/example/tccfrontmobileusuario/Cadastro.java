@@ -51,4 +51,14 @@ public class Cadastro extends AppCompatActivity {
     }
 
 
+    public void closeActivity (View view) {
+        Intent intent = new Intent(Cadastro.this, HomepageUsuario.class);
+        startActivity(intent);
+        finish();
+
+    }
+
+
+
+
 }
