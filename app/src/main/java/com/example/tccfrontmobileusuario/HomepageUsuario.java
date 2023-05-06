@@ -2,6 +2,7 @@ package com.example.tccfrontmobileusuario;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -167,30 +168,31 @@ public class HomepageUsuario extends AppCompatActivity {
     }
 
 
+
     public void menuUsuario(View view) {
-        openOptionsMenu();
+        PopupMenu popup = new PopupMenu(this, view);
+        popup.setOnMenuItemClickListener(this::onOptionsItemSelected);
+        popup.inflate(R.menu.menu_usuario);
+        popup.show();
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_usuario, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.sobreApp:
-                Intent intent = new Intent(HomepageUsuario.this, SobreApp.class);
+                Intent intent = new Intent(HomepageUsuario.this, SobreAppLogadoUsuario.class);
+                intent.putExtra("usuario", usuarioDTO);
                 startActivity(intent);
                 finish();
+                return true;
             case R.id.cadastro:
                 Intent intent2 = new Intent(HomepageUsuario.this, Cadastro.class);
+                intent2.putExtra("usuario", usuarioDTO);
                 startActivity(intent2);
                 finish();
+                return true;
             case R.id.logout:
                 Toast.makeText(HomepageUsuario.this, "Implementar logout", Toast.LENGTH_SHORT).show();
-
+                return true;
 
 
         }
