@@ -2,6 +2,7 @@ package com.example.tccfrontmobileusuario;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,33 +23,29 @@ public class SobreApp extends AppCompatActivity {
 //*********************************************************************************************************************************************
 // fazer o código if (se usuario logado ir para o menu de usuario, se operario logado abrir menu de operario, se usuario deslocago abrir menu de usuario deslogado)
     //*******************************************************************************************************************************************
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_operario, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
+public void menuDeslogado(View view) {
+    PopupMenu popup = new PopupMenu(this, view);
+    popup.setOnMenuItemClickListener(this::onOptionsItemSelected);
+    popup.inflate(R.menu.menu_deslogado);
+    popup.show();
+}
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
         switch (item.getItemId()){
             case R.id.sobreApp:
                 Intent intent = new Intent(SobreApp.this, SobreApp.class);
                 startActivity(intent);
                 finish();
-            case R.id.cadastro_operario:
-                Intent intent2 = new Intent(SobreApp.this, CadastroOperario.class);
-                startActivity(intent2);
-                finish();
-            case R.id.logout:
-                Toast.makeText(SobreApp.this, "Implementar logout", Toast.LENGTH_SHORT).show();
-
-
-
+                return true;
         }
 
 
         return super.onOptionsItemSelected(item);
     }
+
 
 
     public void closeActivity (View view) {
