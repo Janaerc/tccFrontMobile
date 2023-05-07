@@ -15,6 +15,7 @@ import model.UsuarioDTO;
 public class SobreAppLogadoUsuario extends AppCompatActivity {
 
     UsuarioDTO usuarioDTO;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,10 +23,12 @@ public class SobreAppLogadoUsuario extends AppCompatActivity {
         usuarioDTO = (UsuarioDTO) getIntent().getSerializableExtra("usuario");
 
     }
+
+    // MENU DE OPÇÕES - USUARIO LOGADO
     public void menuUsuario(View view) {
         PopupMenu popup = new PopupMenu(this, view);
         popup.setOnMenuItemClickListener(this::onOptionsItemSelected);
-        popup.inflate(R.menu.menu_deslogado);
+        popup.inflate(R.menu.menu_usuario);
         popup.show();
     }
 
@@ -35,20 +38,22 @@ public class SobreAppLogadoUsuario extends AppCompatActivity {
 
 
             switch (item.getItemId()){
-                case R.id.sobreApp:
+                case R.id.sobreAppUsuarioLogado:
                     Intent intent = new Intent(SobreAppLogadoUsuario.this, SobreAppLogadoUsuario.class);
                     intent.putExtra("usuario", usuarioDTO);
                     startActivity(intent);
                     finish();
+                    return true;
                 case R.id.cadastro:
                     Intent intent2 = new Intent(SobreAppLogadoUsuario.this, Cadastro.class);
                     intent2.putExtra("usuario", usuarioDTO);
                     startActivity(intent2);
                     finish();
+                    return true;
                 case R.id.logout:
-                    Toast.makeText(SobreAppLogadoUsuario.this, "Implementar logout", Toast.LENGTH_SHORT).show();
-
-
+                    Logout logout = new Logout(this);
+                    logout.logout();
+                    return true;
 
             }
 
@@ -57,7 +62,7 @@ public class SobreAppLogadoUsuario extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
+//********************************************************************************************************
     public void closeActivity(View view) {
         Intent intent = new Intent(SobreAppLogadoUsuario.this, HomepageUsuario.class);
         intent.putExtra("usuario", usuarioDTO);

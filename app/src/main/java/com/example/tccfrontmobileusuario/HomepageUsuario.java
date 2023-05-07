@@ -168,7 +168,7 @@ public class HomepageUsuario extends AppCompatActivity {
     }
 
 
-
+// MENU DE OPÇÕES - usuário logado
     public void menuUsuario(View view) {
         PopupMenu popup = new PopupMenu(this, view);
         popup.setOnMenuItemClickListener(this::onOptionsItemSelected);
@@ -178,7 +178,7 @@ public class HomepageUsuario extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.sobreApp:
+            case R.id.sobreAppUsuarioLogado:
                 Intent intent = new Intent(HomepageUsuario.this, SobreAppLogadoUsuario.class);
                 intent.putExtra("usuario", usuarioDTO);
                 startActivity(intent);
@@ -191,8 +191,10 @@ public class HomepageUsuario extends AppCompatActivity {
                 finish();
                 return true;
             case R.id.logout:
-                Toast.makeText(HomepageUsuario.this, "Implementar logout", Toast.LENGTH_SHORT).show();
+                Logout logout = new Logout(this);
+                logout.logout();
                 return true;
+
 
 
         }
@@ -201,7 +203,7 @@ public class HomepageUsuario extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
+//****************************************************************************************
 
 
 

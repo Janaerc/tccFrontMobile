@@ -220,15 +220,21 @@ public class NovoChamado extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.sobreApp:
-                Intent intent = new Intent(NovoChamado.this, SobreApp.class);
+                Intent intent = new Intent(NovoChamado.this, SobreAppLogadoUsuario.class);
+                intent.putExtra("usuario", usuarioDTO);
                 startActivity(intent);
                 finish();
+                return true;
             case R.id.cadastro:
                 Intent intent2 = new Intent(NovoChamado.this, Cadastro.class);
+                intent2.putExtra("usuario", usuarioDTO);
                 startActivity(intent2);
                 finish();
+                return true;
             case R.id.logout:
-                Toast.makeText(NovoChamado.this, "Implementar logout", Toast.LENGTH_SHORT).show();
+                Logout logout = new Logout(this);
+                logout.logout();
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -236,6 +242,7 @@ public class NovoChamado extends AppCompatActivity {
 
     public void voltarHome(View view) {
         Intent intent = new Intent(NovoChamado.this, HomepageUsuario.class);
+        intent.putExtra("usuario", usuarioDTO);
         startActivity(intent);
     }
 

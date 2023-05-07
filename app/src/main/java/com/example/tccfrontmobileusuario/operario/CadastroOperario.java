@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.tccfrontmobileusuario.Logout;
 import com.example.tccfrontmobileusuario.MainActivity;
 import com.example.tccfrontmobileusuario.PrimeiroAcesso;
 import com.example.tccfrontmobileusuario.R;
@@ -42,12 +43,16 @@ public class CadastroOperario extends AppCompatActivity {
                 Intent intent = new Intent(CadastroOperario.this, SobreApp.class);
                 startActivity(intent);
                 finish();
+                return true;
             case R.id.cadastro_operario:
                 Intent intent2 = new Intent(CadastroOperario.this, CadastroOperario.class);
                 startActivity(intent2);
                 finish();
+                return true;
             case R.id.logout:
-                Toast.makeText(CadastroOperario.this, "Implementar logout", Toast.LENGTH_SHORT).show();
+                Logout logout = new Logout(this);
+                logout.logout();
+                return true;
 
 
 
