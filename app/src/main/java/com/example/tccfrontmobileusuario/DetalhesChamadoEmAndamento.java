@@ -32,14 +32,16 @@ public class DetalhesChamadoEmAndamento extends AppCompatActivity {
                 Intent intent = new Intent(DetalhesChamadoEmAndamento.this, SobreApp.class);
                 startActivity(intent);
                 finish();
+                return true;
             case R.id.cadastro:
                 Intent intent2 = new Intent(DetalhesChamadoEmAndamento.this, Cadastro.class);
                 startActivity(intent2);
                 finish();
+                return true;
             case R.id.logout:
-                Toast.makeText(DetalhesChamadoEmAndamento.this, "Implementar logout", Toast.LENGTH_SHORT).show();
-
-
+                Logout logout = new Logout(this);
+                logout.logout();
+                return true;
 
         }
 

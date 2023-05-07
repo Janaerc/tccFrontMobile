@@ -1,4 +1,4 @@
-package com.example.tccfrontmobileusuario;
+package com.example.tccfrontmobileusuario.operario;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.tccfrontmobileusuario.operario.HomepageOperario;
+import com.example.tccfrontmobileusuario.R;
 
 public class DetalhesOrdemServicoAberta extends AppCompatActivity {
 

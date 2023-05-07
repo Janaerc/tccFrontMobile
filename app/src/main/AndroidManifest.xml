@@ -17,10 +17,10 @@
             android:name=".SobreAppLogadoUsuario"
             android:exported="false" />
         <activity
-            android:name=".ManterOrdemDeServico"
+            android:name=".operario.ManterOrdemDeServico"
             android:exported="false" />
         <activity
-            android:name=".DetalhesOrdemServicoAberta"
+            android:name=".operario.DetalhesOrdemServicoAberta"
             android:exported="false" />
         <activity
             android:name=".operario.CadastroOperario"

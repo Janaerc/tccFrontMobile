@@ -41,13 +41,16 @@ public class Cadastro extends AppCompatActivity {
                 intent.putExtra("usuario", usuarioDTO);
                 startActivity(intent);
                 finish();
+                return true;
             case R.id.cadastro:
                 Intent intent2 = new Intent(Cadastro.this, Cadastro.class);
                 intent2.putExtra("usuario", usuarioDTO);
                 startActivity(intent2);
                 finish();
+                return true;
             case R.id.logout:
                 Toast.makeText(Cadastro.this, "Implementar logout", Toast.LENGTH_SHORT).show();
+                return true;
 
 
 
