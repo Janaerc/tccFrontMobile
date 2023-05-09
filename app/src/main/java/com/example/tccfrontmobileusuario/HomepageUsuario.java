@@ -3,21 +3,28 @@ package com.example.tccfrontmobileusuario;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.sql.Array;
+import java.util.ArrayList;
 import java.util.List;
 
+import adapter.ChamadoListAdapter;
 import backend.RetrofitConfig;
 import bean.Chamado;
 import helper.RecyclerItemClickListener;
@@ -34,8 +41,10 @@ public class HomepageUsuario extends AppCompatActivity {
     Button botaoNovoChamado;
     TextView saudacao, sigla;
 
-    private List<ChamadoDTO> chamadoDTO;
-    private List<Chamado> chamados;
+    private ChamadoListAdapter chamadoListAdapter;
+
+    private List<ChamadoDTO> chamadoDTO = new ArrayList<>();
+    private List<Chamado> chamados =  new ArrayList<>();;
 
     private RecyclerView recyclerView;
 
@@ -119,6 +128,35 @@ public class HomepageUsuario extends AppCompatActivity {
 
     public void updateRecyclerChamadoList(){
         //fazer igual do ListarTodos do pokemon linha 138 até a linha 182
+        Call<List<ChamadoDTO>> call1 = new RetrofitConfig().getChamadoService().listaDeChamados(usuarioDTO.getId());
+
+        call1.enqueue(new Callback<List<ChamadoDTO>>() {
+            @Override
+            public void onResponse(Call<List<ChamadoDTO>> call, Response<List<ChamadoDTO>> response) {
+                if (response.isSuccessful()) {
+                    chamadoDTO = response.body();
+
+                    //configura adapter
+                    chamadoListAdapter = new ChamadoListAdapter(chamadoDTO);
+
+                    //configura recyclerView
+                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+                    recyclerView.setLayoutManager(layoutManager);
+                    recyclerView.setHasFixedSize(true);
+                    recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(), LinearLayout.VERTICAL));
+                    recyclerView.setAdapter(chamadoListAdapter);
+                } else
+                    Toast.makeText(HomepageUsuario.this, "Erro ao carregar Pokemon", Toast.LENGTH_SHORT).show();
+                Log.i("INFO", "erro");
+            }
+
+            @Override
+            public void onFailure(Call<List<ChamadoDTO>> call, Throwable t) {
+                Toast.makeText(HomepageUsuario.this, "Erro de API", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 
 
@@ -163,6 +201,18 @@ public class HomepageUsuario extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        updateRecyclerChamadoList();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateRecyclerChamadoList();
     }
 
 

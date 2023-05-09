@@ -23,8 +23,6 @@ public class ChamadoListAdapter extends RecyclerView.Adapter<ChamadoListAdapter.
     private final List<ChamadoDTO> list;
 
 
-    //private List<PokemonDTO> list;
-
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -59,7 +57,7 @@ public class ChamadoListAdapter extends RecyclerView.Adapter<ChamadoListAdapter.
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         ChamadoDTO chamadoDTO = list.get(position);
-        holder.numeroChamado.setText(chamadoDTO.getId());
+        holder.numeroChamado.setText(chamadoDTO.getId().toString());
         CampusDTO campusDTO;
         campusDTO = chamadoDTO.getPredioId().getCampusId();
         holder.nomeCampus.setText(campusDTO.getNome());
