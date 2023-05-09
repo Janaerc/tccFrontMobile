@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.tccfrontmobileusuario.Logout;
 import com.example.tccfrontmobileusuario.R;
@@ -19,7 +18,7 @@ public class HomepageOperario extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homepage_operario);
+        setContentView(R.layout.activity_operario_homepage);
 
     }
 

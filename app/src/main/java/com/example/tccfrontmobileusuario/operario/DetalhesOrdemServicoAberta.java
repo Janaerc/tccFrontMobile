@@ -13,7 +13,7 @@ public class DetalhesOrdemServicoAberta extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detalhes_ordem_servico_aberta);
+        setContentView(R.layout.activity_operario_detalhes_ordem_servico_aberta);
     }
 
 

@@ -11,6 +11,6 @@ public class ManterOrdemDeServico extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manter_ordem_de_servico);
+        setContentView(R.layout.activity_operario_manter_ordem_de_servico);
     }
 }

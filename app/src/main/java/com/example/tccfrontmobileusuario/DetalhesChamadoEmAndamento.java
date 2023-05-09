@@ -8,14 +8,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 public class DetalhesChamadoEmAndamento extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detalhes_chamado_em_andamento);
+        setContentView(R.layout.activity_usuario_detalhes_chamado_em_andamento);
     }
 
 
@@ -28,7 +27,7 @@ public class DetalhesChamadoEmAndamento extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.sobreApp:
+            case R.id.sobreAppUsuarioLogado:
                 Intent intent = new Intent(DetalhesChamadoEmAndamento.this, SobreApp.class);
                 startActivity(intent);
                 finish();
