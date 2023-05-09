@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,7 +22,6 @@ import backend.RetrofitConfig;
 import bean.Chamado;
 import helper.RecyclerItemClickListener;
 import model.ChamadoDTO;
-import model.StatusDTO;
 import model.UsuarioDTO;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,7 +42,7 @@ public class HomepageUsuario extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homepage_usuario);
+        setContentView(R.layout.activity_usuario_homepage);
 
         usuarioDTO = (UsuarioDTO) getIntent().getSerializableExtra("usuario");
         saudacao = findViewById(R.id.saudacao_user_name);

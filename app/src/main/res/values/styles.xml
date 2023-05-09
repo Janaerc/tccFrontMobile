@@ -28,6 +28,16 @@
 
     </style>
 
+    <style name="spinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/edit_text</item>
+        <item name="android:maxLength">35</item>
+        <item name="android:dropDownHintAppearance">@color/blue</item>
+        <item name="android:drawableRight">@drawable/drop_down_spinner</item>
+
+    </style>
+
     <style name="Button_blue">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

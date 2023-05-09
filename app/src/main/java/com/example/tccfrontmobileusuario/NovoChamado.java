@@ -219,7 +219,7 @@ public class NovoChamado extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.sobreApp:
+            case R.id.sobreAppUsuarioLogado:
                 Intent intent = new Intent(NovoChamado.this, SobreAppLogadoUsuario.class);
                 intent.putExtra("usuario", usuarioDTO);
                 startActivity(intent);
