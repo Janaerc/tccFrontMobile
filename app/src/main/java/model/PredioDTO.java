@@ -41,5 +41,14 @@ public class PredioDTO implements Serializable{
         this.campusId = campusId;
     }
 
+    @Override
+    public String toString() {
+        return "PredioDTO{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", campusId=" + campusId +
+                '}';
+    }
+
 
 }

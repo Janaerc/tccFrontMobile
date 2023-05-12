@@ -104,6 +104,20 @@ public class ChamadoDTO  implements Serializable{
         this.usuarioId = usuarioId;
     }
 
+    public String toString() {
+        return "ChamadoDTO{" +
+                "id=" + id +
+                ", descricaoLocal='" + descricaoLocal + '\'' +
+                ", descricaoProblema='" + descricaoProblema + '\'' +
+                ", anexo='" + anexo + '\'' +
+                ", dataHora=" + dataHora +
+                ", ordemServicoId=" + ordemServicoId +
+                ", predioId=" + predioId +
+                ", statusId=" + statusId +
+                ", usuarioId=" + usuarioId +
+                '}';
+    }
+
 
 
 }
