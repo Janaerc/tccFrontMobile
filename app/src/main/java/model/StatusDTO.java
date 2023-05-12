@@ -31,4 +31,12 @@ public class StatusDTO implements Serializable{
         this.nome = nome;
     }
 
+    @Override
+    public String toString() {
+        return "StatusDTO{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                '}';
+    }
+
 }

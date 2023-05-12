@@ -101,4 +101,19 @@ public class UsuarioDTO implements Serializable{
         this.tipoUsuarioId = tipoUsuarioId;
     }
 
+    @Override
+    public String toString() {
+        return "UsuarioDTO{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                ", bloqueio=" + bloqueio +
+                ", especialidadeId=" + especialidadeId +
+                ", tipoUsuarioId=" + tipoUsuarioId +
+                '}';
+    }
+
 }

@@ -50,12 +50,14 @@ public class ChamadoListAdapter extends RecyclerView.Adapter<ChamadoListAdapter.
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View pokemonItem = LayoutInflater.from(parent.getContext()).inflate(R.layout.chamado_item, parent, false);
-        return new MyViewHolder(pokemonItem);
+        View chamadoItem= LayoutInflater.from(parent.getContext()).inflate(R.layout.chamado_item, parent, false);
+        return new MyViewHolder(chamadoItem);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        System.out.println("entrou no on bind view holder");
+        System.out.println(list);
         ChamadoDTO chamadoDTO = list.get(position);
         holder.numeroChamado.setText(chamadoDTO.getId().toString());
         CampusDTO campusDTO;
@@ -65,6 +67,7 @@ public class ChamadoListAdapter extends RecyclerView.Adapter<ChamadoListAdapter.
         predioDTO = chamadoDTO.getPredioId();
         holder.nomePredio.setText(predioDTO.getNome());
         holder.descricaoLocal.setText(chamadoDTO.getDescricaoLocal());
+        System.out.println(holder.descricaoLocal);
 
     }
 

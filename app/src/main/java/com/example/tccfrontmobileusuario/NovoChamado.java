@@ -77,7 +77,7 @@ public class NovoChamado extends AppCompatActivity {
         adapter1.setDropDownViewResource((android.R.layout.simple_spinner_dropdown_item));
         predioSpinner.setAdapter(adapter1);
 
-        localizacao = findViewById(R.id.descricao_problema_editText);
+        localizacao = findViewById(R.id.descricao_localizacao_editText);
         problema = findViewById(R.id.descricao_problema_editText);
 
 

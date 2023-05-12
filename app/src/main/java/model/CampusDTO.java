@@ -30,4 +30,12 @@ public class CampusDTO implements Serializable {
         this.nome = nome;
     }
 
+    @Override
+    public String toString() {
+        return "CampusDTO{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                '}';
+    }
+
 }

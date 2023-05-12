@@ -43,8 +43,7 @@ public class HomepageUsuario extends AppCompatActivity {
 
     private ChamadoListAdapter chamadoListAdapter;
 
-    private List<ChamadoDTO> chamadoDTO = new ArrayList<>();
-    private List<Chamado> chamados =  new ArrayList<>();;
+    private List<ChamadoDTO> chamadoDTOList = new ArrayList<>();
 
     private RecyclerView recyclerView;
 
@@ -75,7 +74,7 @@ public class HomepageUsuario extends AppCompatActivity {
                 new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position){
-                        int id = chamados.get(position).getId();
+                        int id = chamadoDTOList.get(position).getId();
 
                         Call<ChamadoDTO> call = new RetrofitConfig().getChamadoService().chamadoPorId(id);
                         call.enqueue(new Callback<ChamadoDTO>() {
@@ -134,10 +133,11 @@ public class HomepageUsuario extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<ChamadoDTO>> call, Response<List<ChamadoDTO>> response) {
                 if (response.isSuccessful()) {
-                    chamadoDTO = response.body();
-
+                    chamadoDTOList = response.body();
+                    System.out.println("dentro do updaterecycler");
+                    System.out.println(chamadoDTOList);
                     //configura adapter
-                    chamadoListAdapter = new ChamadoListAdapter(chamadoDTO);
+                    chamadoListAdapter = new ChamadoListAdapter(chamadoDTOList);
 
                     //configura recyclerView
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
@@ -174,9 +174,9 @@ public class HomepageUsuario extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<ChamadoDTO>> call, Response<List<ChamadoDTO>> response) {
                 System.out.println("veio resposta");
-                chamadoDTO = response.body();
-                if(chamadoDTO != null) {
-                    for (ChamadoDTO c : chamadoDTO) {
+                chamadoDTOList = response.body();
+                if(chamadoDTOList != null) {
+                    for (ChamadoDTO c : chamadoDTOList) {
                         Chamado chamado = new Chamado();
                         chamado.setUsuarioId(c.getUsuarioId());
                         chamado.setDescricaoLocal(c.getDescricaoLocal());
@@ -191,7 +191,7 @@ public class HomepageUsuario extends AppCompatActivity {
                         //chamados.add(chamado);
                     }
                 }else {
-                        System.out.println(chamadoDTO);
+                        System.out.println(chamadoDTOList);
 
                 }
             }
