@@ -57,6 +57,9 @@ public class HomepageUsuario extends AppCompatActivity {
         sigla = findViewById(R.id.container_user_text);
         botaoNovoChamado = findViewById(R.id.buttonNovoChamado);
         recyclerView = findViewById(R.id.recyclerViewChamadosUsuario);
+        chamadoListAdapter = new ChamadoListAdapter(chamadoDTOList);
+
+        recyclerView.setAdapter(chamadoListAdapter);
 
         String nomeCompleto = usuarioDTO.getNome();
         int indiceEspaco = nomeCompleto.indexOf(" ");
@@ -99,7 +102,7 @@ public class HomepageUsuario extends AppCompatActivity {
                                         it.putExtra("usuario", usuarioDTO);
                                         startActivity(it);
                                     } else {
-                                        Toast.makeText(HomepageUsuario.this, "Erro ao recuperar Pokemon", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(HomepageUsuario.this, "Erro ao recuperar Chamado", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             }
@@ -143,10 +146,10 @@ public class HomepageUsuario extends AppCompatActivity {
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
                     recyclerView.setLayoutManager(layoutManager);
                     recyclerView.setHasFixedSize(true);
-                    recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(), LinearLayout.VERTICAL));
+                    recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(), LinearLayout.HORIZONTAL));
                     recyclerView.setAdapter(chamadoListAdapter);
                 } else
-                    Toast.makeText(HomepageUsuario.this, "Erro ao carregar Pokemon", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomepageUsuario.this, "Erro ao carregar Chamados", Toast.LENGTH_SHORT).show();
                 Log.i("INFO", "erro");
             }
 
