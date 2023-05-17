@@ -18,6 +18,7 @@ import kotlin.jvm.internal.markers.KMutableList;
 import model.CampusDTO;
 import model.ChamadoDTO;
 import model.PredioDTO;
+import model.StatusDTO;
 
 public class ChamadoListAdapter extends RecyclerView.Adapter<ChamadoListAdapter.MyViewHolder>{
     private final List<ChamadoDTO> list;
@@ -27,7 +28,7 @@ public class ChamadoListAdapter extends RecyclerView.Adapter<ChamadoListAdapter.
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
 
-        TextView numeroChamado, nomePredio, descricaoLocal, nomeCampus;
+        TextView numeroChamado, nomePredio, descricaoLocal, nomeCampus, statusChamado;
 
 
         public MyViewHolder(@NonNull View view){
@@ -38,7 +39,7 @@ public class ChamadoListAdapter extends RecyclerView.Adapter<ChamadoListAdapter.
             nomeCampus = view.findViewById(R.id.txtNomeCampus);
             nomePredio = view.findViewById(R.id.txtNomePredio);
             descricaoLocal = view.findViewById(R.id.txtDescricaoLocal);
-
+            statusChamado = view.findViewById(R.id.txtStatusChamado);
         }
     }
 
@@ -59,13 +60,19 @@ public class ChamadoListAdapter extends RecyclerView.Adapter<ChamadoListAdapter.
         System.out.println("entrou no on bind view holder");
         System.out.println(list);
         ChamadoDTO chamadoDTO = list.get(position);
-        holder.numeroChamado.setText(chamadoDTO.getId().toString());
+
+        System.out.println("dentro do onbindviewholder status aqui em baixo jana");
+        System.out.println(chamadoDTO.getStatusId().getNome());
+        holder.statusChamado.setText(chamadoDTO.getStatusId().getNome());
+
         CampusDTO campusDTO;
         campusDTO = chamadoDTO.getPredioId().getCampusId();
         holder.nomeCampus.setText(campusDTO.getNome());
+
         PredioDTO predioDTO;
         predioDTO = chamadoDTO.getPredioId();
         holder.nomePredio.setText(predioDTO.getNome());
+
         holder.descricaoLocal.setText(chamadoDTO.getDescricaoLocal());
         System.out.println(holder.descricaoLocal);
 
