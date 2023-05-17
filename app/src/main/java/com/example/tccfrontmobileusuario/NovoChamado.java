@@ -179,7 +179,7 @@ public class NovoChamado extends AppCompatActivity {
         chamado.setPredioId(preaux);
         chamado.setUsuarioId(usuarioDTO);
             StatusDTO status = new StatusDTO();
-            status.setId(1);
+            status.setId(2);
         chamado.setStatusId(status);
             LocalDateTime agora = LocalDateTime.now();
             DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -197,7 +197,9 @@ public class NovoChamado extends AppCompatActivity {
             public void onResponse(Call<ChamadoDTO> call, Response<ChamadoDTO> response) {
                 if (response.isSuccessful()){
                     Toast.makeText(NovoChamado.this,"Chamado Cadastrado", Toast.LENGTH_SHORT).show();
-                    //adicionar o usuario a intent e ver para qual enviar
+                    Intent it = new Intent(NovoChamado.this, HomepageUsuario.class);
+                    it.putExtra("usuario", usuarioDTO);
+                    startActivity(it);
                 }
             }
 

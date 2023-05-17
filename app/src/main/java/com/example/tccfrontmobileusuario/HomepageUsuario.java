@@ -78,7 +78,6 @@ public class HomepageUsuario extends AppCompatActivity {
                     @Override
                     public void onItemClick(View view, int position){
                         int id = chamadoDTOList.get(position).getId();
-
                         Call<ChamadoDTO> call = new RetrofitConfig().getChamadoService().chamadoPorId(id);
                         call.enqueue(new Callback<ChamadoDTO>() {
                             @Override
@@ -88,21 +87,19 @@ public class HomepageUsuario extends AppCompatActivity {
                                     Bundle params = new Bundle();
                                     params.putString("operacao","view");
                                     params.putSerializable("chamado", selectedChamadoDTO);
+                                    System.out.println("id do status aqui em baixo");
+                                    System.out.println(selectedChamadoDTO.getStatusId().getId());
                                     if(selectedChamadoDTO.getStatusId().getId() == 1) {
                                         Intent it = new Intent(HomepageUsuario.this, DetalhesChamadoEmAndamento.class);
-                                        it.putExtra("update", "update");
-                                        it.putExtra("pokemon", selectedChamadoDTO);
+                                        it.putExtra("chamado", selectedChamadoDTO);
                                         it.putExtra("usuario", usuarioDTO);
                                         startActivity(it);
                                     }
                                     if(selectedChamadoDTO.getStatusId().getId() == 2) {
                                         Intent it = new Intent(HomepageUsuario.this, DetalhesChamadoAberto.class);
-                                        it.putExtra("update", "update");
-                                        it.putExtra("pokemon", selectedChamadoDTO);
+                                        it.putExtra("chamado", selectedChamadoDTO);
                                         it.putExtra("usuario", usuarioDTO);
                                         startActivity(it);
-                                    } else {
-                                        Toast.makeText(HomepageUsuario.this, "Erro ao recuperar Chamado", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             }

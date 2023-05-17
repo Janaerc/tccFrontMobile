@@ -8,13 +8,36 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+
+import model.ChamadoDTO;
+import model.UsuarioDTO;
 
 public class DetalhesChamadoEmAndamento extends AppCompatActivity {
+
+    UsuarioDTO usuarioDTO;
+
+    ChamadoDTO chamadoDTO;
+
+    EditText editCampus, editPredio, editLocalizacao, editProblema;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario_detalhes_chamado_em_andamento);
+
+        usuarioDTO = (UsuarioDTO) getIntent().getSerializableExtra("usuario");
+        chamadoDTO = (ChamadoDTO) getIntent().getSerializableExtra("chamado");
+        editCampus = findViewById(R.id.editTexCampus);
+        editPredio = findViewById(R.id.editTextPredio);
+        editLocalizacao = findViewById(R.id.descricao_localizacao_editText);
+        editProblema = findViewById(R.id.descricao_problema_editText);
+
+        editCampus.setText(chamadoDTO.getPredioId().getCampusId().getNome());
+        editPredio.setText(chamadoDTO.getPredioId().getNome());
+        editLocalizacao.setText(chamadoDTO.getDescricaoLocal());
+        editProblema.setText(chamadoDTO.getDescricaoProblema());
+
     }
 
 
