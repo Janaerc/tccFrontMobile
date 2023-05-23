@@ -1,10 +1,8 @@
 package adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,11 +13,13 @@ import com.example.tccfrontmobileusuario.R;
 import java.util.List;
 
 import model.CampusDTO;
-import model.ChamadoDTO;
+import model.OrdemServicoDTO;
 import model.PredioDTO;
 
-public class ChamadoListAdapter extends RecyclerView.Adapter<ChamadoListAdapter.MyViewHolder>{
-    private final List<ChamadoDTO> list;
+public class OrdemServicoListAdapter extends RecyclerView.Adapter<OrdemServicoListAdapter.MyViewHolder>{
+
+
+    private final List<OrdemServicoDTO> list;
 
 
 
@@ -41,7 +41,7 @@ public class ChamadoListAdapter extends RecyclerView.Adapter<ChamadoListAdapter.
         }
     }
 
-    public ChamadoListAdapter(List<ChamadoDTO> list) {
+    public OrdemServicoListAdapter(List<OrdemServicoDTO> list) {
         this.list = list;
     }
 
@@ -54,24 +54,23 @@ public class ChamadoListAdapter extends RecyclerView.Adapter<ChamadoListAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull OrdemServicoListAdapter.MyViewHolder holder, int position) {
         System.out.println("entrou no on bind view holder");
         System.out.println(list);
-        ChamadoDTO chamadoDTO = list.get(position);
+        OrdemServicoDTO ordemServicoDTO = list.get(position);
 
-        System.out.println("dentro do onbindviewholder status aqui em baixo jana");
-        System.out.println(chamadoDTO.getStatusId().getNome());
-        holder.statusChamado.setText(chamadoDTO.getStatusId().getNome());
+        holder.statusChamado.setText(ordemServicoDTO.getChamado().getStatusId().getNome());
+
 
         CampusDTO campusDTO;
-        campusDTO = chamadoDTO.getPredioId().getCampusId();
+        campusDTO = ordemServicoDTO.getChamado().getPredioId().getCampusId();
         holder.nomeCampus.setText(campusDTO.getNome());
 
         PredioDTO predioDTO;
-        predioDTO = chamadoDTO.getPredioId();
+        predioDTO = ordemServicoDTO.getChamado().getPredioId();
         holder.nomePredio.setText(predioDTO.getNome());
 
-        holder.descricaoLocal.setText(chamadoDTO.getDescricaoLocal());
+        holder.descricaoLocal.setText(ordemServicoDTO.getChamado().getDescricaoLocal());
         System.out.println(holder.descricaoLocal);
 
     }
@@ -80,5 +79,4 @@ public class ChamadoListAdapter extends RecyclerView.Adapter<ChamadoListAdapter.
     public int getItemCount() {
         return this.list.size();
     }
-
 }

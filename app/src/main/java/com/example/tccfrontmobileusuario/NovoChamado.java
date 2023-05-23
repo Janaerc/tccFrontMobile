@@ -37,7 +37,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-
 public class NovoChamado extends AppCompatActivity {
 
     UsuarioDTO usuarioDTO;
@@ -58,7 +57,7 @@ public class NovoChamado extends AppCompatActivity {
     private List<PredioDTO> predioDTO;
 
 
-    TextView localizacao, problema;
+    TextView localizacao = null, problema = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,11 +80,10 @@ public class NovoChamado extends AppCompatActivity {
         problema = findViewById(R.id.descricao_problema_editText);
 
 
-
         campusSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                campusId = position+1;
+                campusId = position + 1;
                 System.out.println("aqui está o id do campus");
                 System.out.println(campusId);
                 Campus campus = (Campus) parent.getItemAtPosition(position);
@@ -101,7 +99,7 @@ public class NovoChamado extends AppCompatActivity {
         predioSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                predioId = position+1;
+                predioId = position + 1;
                 System.out.println("aqui está o id do predio");
                 System.out.println(predioId);
 
@@ -122,7 +120,7 @@ public class NovoChamado extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<CampusDTO>> call, Response<List<CampusDTO>> response) {
                 List<CampusDTO> campusDTO = response.body();
-                for (CampusDTO c: campusDTO) {
+                for (CampusDTO c : campusDTO) {
                     Campus campus = new Campus();
                     campus.setId(c.getId());
                     campus.setNome(c.getNome());
@@ -149,8 +147,8 @@ public class NovoChamado extends AppCompatActivity {
             public void onResponse(Call<List<PredioDTO>> call, Response<List<PredioDTO>> response) {
                 predioDTO = response.body();
                 predioList.clear();
-                if (predioDTO != null){
-                    for (PredioDTO c: predioDTO) {
+                if (predioDTO != null) {
+                    for (PredioDTO c : predioDTO) {
                         System.out.println(c.getNome());
                         Predio predio = new Predio();
                         predio.setId(c.getId());
@@ -170,46 +168,48 @@ public class NovoChamado extends AppCompatActivity {
         });
     }
 
-    public void cadastrarChamado (View view) throws ParseException {
-            ChamadoDTO chamado = new ChamadoDTO();
+    public void cadastrarChamado(View view) throws ParseException {
+
+        ChamadoDTO chamado = new ChamadoDTO();
         chamado.setDescricaoLocal(localizacao.getText().toString());
         chamado.setDescricaoProblema(problema.getText().toString());
-            PredioDTO preaux = new PredioDTO();
-            preaux.setId(predioId);
+        PredioDTO preaux = new PredioDTO();
+        preaux.setId(predioId);
         chamado.setPredioId(preaux);
         chamado.setUsuarioId(usuarioDTO);
-            StatusDTO status = new StatusDTO();
-            status.setId(2);
+        StatusDTO status = new StatusDTO();
+        status.setId(2);
         chamado.setStatusId(status);
-            LocalDateTime agora = LocalDateTime.now();
-            DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-            String timestamp = agora.format(formato);
-            SimpleDateFormat formatoTimestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            Date date = formatoTimestamp.parse(timestamp);
+        LocalDateTime agora = LocalDateTime.now();
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String timestamp = agora.format(formato);
+        SimpleDateFormat formatoTimestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = formatoTimestamp.parse(timestamp);
         //chamado.setDataHora(date);
         //verificar o problema do status
 
-        System.out.println(date);
-
-        Call<ChamadoDTO>call = new RetrofitConfig().getChamadoService().cadastrarChamado(chamado);
-        call.enqueue(new Callback<ChamadoDTO>() {
-            @Override
-            public void onResponse(Call<ChamadoDTO> call, Response<ChamadoDTO> response) {
-                if (response.isSuccessful()){
-                    Toast.makeText(NovoChamado.this,"Chamado Cadastrado", Toast.LENGTH_SHORT).show();
-                    Intent it = new Intent(NovoChamado.this, HomepageUsuario.class);
-                    it.putExtra("usuario", usuarioDTO);
-                    startActivity(it);
+        if (chamado.getDescricaoLocal().isEmpty() || chamado.getDescricaoProblema().isEmpty()) {
+            Toast.makeText(NovoChamado.this, "Local e problema devem ser preenchidos", Toast.LENGTH_SHORT).show();
+        } else {
+            Call<ChamadoDTO> call = new RetrofitConfig().getChamadoService().cadastrarChamado(chamado);
+            call.enqueue(new Callback<ChamadoDTO>() {
+                @Override
+                public void onResponse(Call<ChamadoDTO> call, Response<ChamadoDTO> response) {
+                    if (response.isSuccessful()) {
+                        Toast.makeText(NovoChamado.this, "Chamado Cadastrado", Toast.LENGTH_SHORT).show();
+                        Intent it = new Intent(NovoChamado.this, HomepageUsuario.class);
+                        it.putExtra("usuario", usuarioDTO);
+                        startActivity(it);
+                    }
                 }
-            }
 
-            @Override
-            public void onFailure(Call<ChamadoDTO> call, Throwable t) {
+                @Override
+                public void onFailure(Call<ChamadoDTO> call, Throwable t) {
 
-            }
-        });
+                }
+            });
 
-
+        }
     }
 
     @Override
@@ -220,7 +220,7 @@ public class NovoChamado extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.sobreAppUsuarioLogado:
                 Intent intent = new Intent(NovoChamado.this, SobreAppLogadoUsuario.class);
                 intent.putExtra("usuario", usuarioDTO);
