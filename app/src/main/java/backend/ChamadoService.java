@@ -3,6 +3,7 @@ package backend;
 import java.util.List;
 
 import model.ChamadoDTO;
+import model.OrdemServicoDTO;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -18,9 +19,20 @@ public interface ChamadoService {
     @GET("chamado/listaChamados/{idUsuario}")
     Call<List<ChamadoDTO>> listaDeChamados(@Path("idUsuario") int idUsuario);
 
+    @GET("chamado/listaChamadosEmAberto/{idUsuario}")
+    Call<List<ChamadoDTO>> listaChamadosEmAberto(@Path("idUsuario") int idUsuario);
+    //esse cara deve pesquisar no back lista de chamados.getordemservico.
+    //getchaveestrangeiradeusuario estiver vazia.
+
+    @GET("chamado/listaMeusChamados/{idUsuario}")
+    Call<List<ChamadoDTO>> listaMeusChamados(@Path("idUsuario") int idUsuario);
+    //esse cara deve pesquisar no back lista de chamados.getordemservico.
+    //getchaveestrangeiradeusuario estiver igual o id dele.
+
     @GET("chamado/chamadoId/{id}")
     Call<ChamadoDTO> chamadoPorId (@Path("id") int id);
 
     @DELETE("chamado/{id}")
     Call<ChamadoDTO> excluirChamado(@Path("id") int id);
+
 }
