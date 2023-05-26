@@ -21,13 +21,9 @@ public interface ChamadoService {
 
     @GET("chamado/listaChamadosEmAberto/{idUsuario}")
     Call<List<ChamadoDTO>> listaChamadosEmAberto(@Path("idUsuario") int idUsuario);
-    //esse cara deve pesquisar no back lista de chamados.getordemservico.
-    //getchaveestrangeiradeusuario estiver vazia.
 
     @GET("chamado/listaMeusChamados/{idUsuario}")
     Call<List<ChamadoDTO>> listaMeusChamados(@Path("idUsuario") int idUsuario);
-    //esse cara deve pesquisar no back lista de chamados.getordemservico.
-    //getchaveestrangeiradeusuario estiver igual o id dele.
 
     @GET("chamado/chamadoId/{id}")
     Call<ChamadoDTO> chamadoPorId (@Path("id") int id);
