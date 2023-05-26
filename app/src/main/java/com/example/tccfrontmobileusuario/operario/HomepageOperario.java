@@ -12,10 +12,13 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tccfrontmobileusuario.DetalhesChamadoAberto;
+import com.example.tccfrontmobileusuario.DetalhesChamadoEmAndamento;
 import com.example.tccfrontmobileusuario.HomepageUsuario;
 import com.example.tccfrontmobileusuario.Logout;
 import com.example.tccfrontmobileusuario.R;
@@ -28,6 +31,7 @@ import adapter.ChamadoListAdapter;
 import adapter.OrdemServicoListAdapter;
 import backend.RetrofitConfig;
 import bean.Chamado;
+import helper.RecyclerItemClickListener;
 import model.ChamadoDTO;
 import model.OrdemServicoDTO;
 import model.UsuarioDTO;
@@ -74,7 +78,92 @@ public class HomepageOperario extends AppCompatActivity {
 
         //fazer igual o homepageusuario linha 75
         //fazer um para cada recyclerview
+        recyclerViewMinhasOrdens.addOnItemTouchListener(
+                new RecyclerItemClickListener(getApplicationContext(), recyclerViewMinhasOrdens,
+                        new RecyclerItemClickListener.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                int id = chamadoDTOListMinhasOrdens.get(position).getId();
+                                Call<ChamadoDTO> call = new RetrofitConfig().getChamadoService().chamadoPorId(id);
+                                call.enqueue(new Callback<ChamadoDTO>() {
+                                    @Override
+                                    public void onResponse(Call<ChamadoDTO> call, Response<ChamadoDTO> response) {
+                                        if (response.isSuccessful()) {
+                                            ChamadoDTO selectedChamadoDTO = response.body();
+                                            Bundle params = new Bundle();
+                                            params.putString("operacao", "view");
+                                            params.putSerializable("chamado", selectedChamadoDTO);
+                                            Intent it = new Intent(HomepageOperario.this, ManterOrdemDeServico.class);
+                                            it.putExtra("chamado", selectedChamadoDTO);
+                                            it.putExtra("usuario", usuarioDTO);
+                                            startActivity(it);
+                                        }
+                                    }
 
+                                    @Override
+                                    public void onFailure(Call<ChamadoDTO> call, Throwable t) {
+
+                                    }
+                                });
+
+                            }
+
+                            @Override
+                            public void onLongItemClick(View view, int position) {
+
+                            }
+
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                            }
+
+                        })
+        );
+
+
+        recyclerViewEmAberto.addOnItemTouchListener(
+                new RecyclerItemClickListener(getApplicationContext(), recyclerViewEmAberto,
+                        new RecyclerItemClickListener.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                int id = chamadoDTOListMinhasOrdens.get(position).getId();
+                                Call<ChamadoDTO> call = new RetrofitConfig().getChamadoService().chamadoPorId(id);
+                                call.enqueue(new Callback<ChamadoDTO>() {
+                                    @Override
+                                    public void onResponse(Call<ChamadoDTO> call, Response<ChamadoDTO> response) {
+                                        if (response.isSuccessful()) {
+                                            ChamadoDTO selectedChamadoDTO = response.body();
+                                            Bundle params = new Bundle();
+                                            params.putString("operacao", "view");
+                                            params.putSerializable("chamado", selectedChamadoDTO);
+                                            Intent it = new Intent(HomepageOperario.this, DetalhesOrdemServicoAberta.class);
+                                            it.putExtra("chamado", selectedChamadoDTO);
+                                            it.putExtra("usuario", usuarioDTO);
+                                            startActivity(it);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onFailure(Call<ChamadoDTO> call, Throwable t) {
+
+                                    }
+                                });
+
+                            }
+
+                            @Override
+                            public void onLongItemClick(View view, int position) {
+
+                            }
+
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                            }
+
+                        })
+        );
     }
 
     public void updateRecyclerChamadoListEmAberto() {
