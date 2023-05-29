@@ -9,6 +9,7 @@ import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface ChamadoService {
@@ -31,4 +32,6 @@ public interface ChamadoService {
     @DELETE("chamado/{id}")
     Call<ChamadoDTO> excluirChamado(@Path("id") int id);
 
+    @PUT("chamado/associar/{idChamado}/{idUsuario}")
+    Call<ChamadoDTO> associarChamado(@Path("idChamado") int idChamado, @Path("idUsuario") int idUsuario);
 }
