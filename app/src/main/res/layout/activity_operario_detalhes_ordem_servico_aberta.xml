@@ -246,13 +246,12 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonSalvarCadastro"
         style="@style/Button_yellow"
-        android:onClick="associarOrdem"
-        android:text="Associar"
-        app:layout_constraintTop_toBottomOf="@id/view_detalhes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="15dp"
-        />
+        android:onClick="associar"
+        android:text="Associar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_detalhes" />
 
 
 
