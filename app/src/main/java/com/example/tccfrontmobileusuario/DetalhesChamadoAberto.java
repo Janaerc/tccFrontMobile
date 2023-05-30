@@ -1,8 +1,6 @@
 package com.example.tccfrontmobileusuario;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +8,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.tccfrontmobileusuario.operario.DetalhesOrdemServicoAberta;
+import com.example.tccfrontmobileusuario.operario.HomepageOperario;
 
 import backend.RetrofitConfig;
 import model.ChamadoDTO;
@@ -49,25 +54,42 @@ public class DetalhesChamadoAberto extends AppCompatActivity {
     }
 
     public void excluirChamado (View view){
-        Call<ChamadoDTO> call = new RetrofitConfig().getChamadoService().excluirChamado(chamadoDTO.getId());
-        call.enqueue(new Callback<ChamadoDTO>() {
+        AlertDialog.Builder msgBox = new AlertDialog.Builder(this);
+        msgBox.setTitle("Excluir");
+        msgBox.setMessage("Tem certeza que deseja excluir o chamado?");
+        msgBox.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
-            public void onResponse(Call<ChamadoDTO> call, Response<ChamadoDTO> response) {
-                if (response.isSuccessful()){
-                    Toast.makeText(DetalhesChamadoAberto.this, "Chamado excluído com sucesso", Toast.LENGTH_SHORT).show();
-                    Intent it = new Intent(DetalhesChamadoAberto.this, HomepageUsuario.class);
-                    it.putExtra("usuario", usuarioDTO);
-                    startActivity(it);
-                } else {
-                    Toast.makeText(DetalhesChamadoAberto.this, "Erro ao excluir chamado", Toast.LENGTH_SHORT).show();
-                }
-            }
+            public void onClick(DialogInterface dialog, int which) {
+                Call<ChamadoDTO> call = new RetrofitConfig().getChamadoService().excluirChamado(chamadoDTO.getId());
+                call.enqueue(new Callback<ChamadoDTO>() {
+                    @Override
+                    public void onResponse(Call<ChamadoDTO> call, Response<ChamadoDTO> response) {
+                        if (response.isSuccessful()){
+                            Toast.makeText(DetalhesChamadoAberto.this, "Chamado excluído com sucesso", Toast.LENGTH_SHORT).show();
+                            Intent it = new Intent(DetalhesChamadoAberto.this, HomepageUsuario.class);
+                            it.putExtra("usuario", usuarioDTO);
+                            startActivity(it);
+                        } else {
+                            Toast.makeText(DetalhesChamadoAberto.this, "Erro ao excluir chamado", Toast.LENGTH_SHORT).show();
+                        }
+                    }
 
-            @Override
-            public void onFailure(Call<ChamadoDTO> call, Throwable t) {
+                    @Override
+                    public void onFailure(Call<ChamadoDTO> call, Throwable t) {
+
+                    }
+                });
 
             }
         });
+        msgBox.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        msgBox.show();
+
+
     }
 
     @Override
