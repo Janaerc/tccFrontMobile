@@ -15,14 +15,15 @@
     <com.google.android.material.card.MaterialCardView
 
         android:id="@+id/materialCardView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:elevation="8dp"
         app:cardElevation="8dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="@color/cardview_light_background">
 
 
 
@@ -32,7 +33,7 @@
 
 
     <LinearLayout
-        android:layout_width="180dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
@@ -41,71 +42,84 @@
             android:id="@+id/txtNumeroChamado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
             android:text="#20221103012"
             android:textColor="@color/gray"
             android:textSize="15dp" />
 
         <TextView
             android:id="@+id/txtNomeCampus"
+            android:layout_marginTop="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="15dp"
+
             android:text="Politécnico"
             android:textColor="@color/gray"
-            android:textSize="25dp" />
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/txtNomePredio"
+            android:layout_marginTop="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="15dp"
+
             android:text="SEPT"
             android:textColor="@color/gray"
-            android:textSize="25dp"
+            android:textSize="20dp"
 
             />
 
         <TextView
             android:id="@+id/txtDescricaoLocal"
+            android:layout_marginTop="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="15dp"
             android:text="banheiro segundo andar bloco A"
             android:textColor="@color/gray"
-            android:textSize="20dp" />
+            android:textSize="15dp" />
     </LinearLayout>
 
 
 
 
  <LinearLayout
-     android:layout_width="180dp"
-     android:layout_height="180dp"
-     android:orientation="vertical">
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:orientation="vertical"
+
+     android:layout_marginLeft="180dp"
+     android:layout_gravity="right">
 
      <LinearLayout
          android:layout_width="match_parent"
-         android:layout_height="50dp">
-    <TextView
-        android:id="@+id/txtStatusChamado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Em Andamento"
-        android:textSize="14dp"
-        android:textColor="@color/gray"
+         android:layout_height="60dp"
+         android:gravity="end">
 
-        />
+         <TextView
+             android:id="@+id/txtStatusChamado"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_margin="8dp"
+             android:text="Em Andamento"
+             android:textAlignment="viewEnd"
+             android:textColor="@color/gray"
+
+
+             android:textSize="14dp" />
 
          <ImageView
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:layout_gravity="end"
-             android:src="@drawable/status_circulo"
+             android:layout_marginTop="8dp"
              android:paddingTop="8dp"
-
+             android:src="@drawable/status_circulo"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
 
              />
 
@@ -116,7 +130,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/seta_open"
-        android:layout_marginTop="40dp"
         android:layout_gravity="end"
         />
 
