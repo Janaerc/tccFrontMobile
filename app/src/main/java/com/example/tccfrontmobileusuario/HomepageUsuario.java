@@ -175,25 +175,15 @@ public class HomepageUsuario extends AppCompatActivity {
             public void onResponse(Call<List<ChamadoDTO>> call, Response<List<ChamadoDTO>> response) {
                 System.out.println("veio resposta");
                 chamadoDTOList = response.body();
-                if(chamadoDTOList != null) {
-                    for (ChamadoDTO c : chamadoDTOList) {
-                        Chamado chamado = new Chamado();
-                        chamado.setUsuarioId(c.getUsuarioId());
-                        chamado.setDescricaoLocal(c.getDescricaoLocal());
-                        chamado.setDescricaoProblema(c.getDescricaoProblema());
-                        chamado.setUsuarioId(c.getUsuarioId());
-                        chamado.setPredioId(c.getPredioId());
-                        chamado.setDataHora(c.getDataHora());
-                        chamado.setId(c.getId());
-                        chamado.setOrdemServicoId(c.getOrdemServicoId());
-                        chamado.setStatusId(c.getStatusId());
-                        System.out.println(chamado);
-                        //chamados.add(chamado);
-                    }
-                }else {
-                        System.out.println(chamadoDTOList);
+                chamadoListAdapter = new ChamadoListAdapter(chamadoDTOList);
 
-                }
+                //configura recyclerView
+                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+                recyclerView.setLayoutManager(layoutManager);
+                recyclerView.setHasFixedSize(true);
+                recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(), LinearLayout.HORIZONTAL));
+                recyclerView.setAdapter(chamadoListAdapter);
+
             }
 
             @Override
