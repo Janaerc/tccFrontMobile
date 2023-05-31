@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OperarioRedirecionar" android:background="@color/blue">
+
+
+
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:title="Detalhes Da Ordem De Serviço"
+                    android:background="@color/yellow"
+                    android:titleMarginStart="50dp"
+
+                    />
+                <ImageView
+                    android:id="@+id/retornoHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/retorno"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="10dp"
+                    android:onClick="voltarHome"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <View
+            android:id="@+id/viewRedirecionar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="65dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            android:fillViewport="true"
+            android:background="@drawable/container_components"/>
+
+
+
+                <TextView
+                    android:id="@+id/numero_chamado_redirecionar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="#2023226598"
+                    android:textSize="15dp"
+                    android:textColor="@color/gray"
+                    app:layout_constraintStart_toStartOf="@id/viewRedirecionar"
+                    app:layout_constraintTop_toTopOf="@id/viewRedirecionar"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    />
+
+    <TextView
+        android:id="@+id/orientacao1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecione a Equipe Necessária"
+        android:textSize="15dp"
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toStartOf="@id/viewRedirecionar"
+        app:layout_constraintTop_toBottomOf="@id/numero_chamado_redirecionar"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/txt_Equipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EQUIPE"
+        android:textSize="15dp"
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toStartOf="@id/viewRedirecionar"
+        app:layout_constraintTop_toBottomOf="@id/orientacao1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        />
+
+    <Spinner
+        android:id="@+id/EquipeSpinner"
+        android:textAppearance="@style/SpinnerTextStyle"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@id/txt_Equipe"
+        app:layout_constraintTop_toBottomOf="@id/orientacao1"
+        style="@style/spinner"
+
+
+
+        />
+
+    <TextView
+        android:id="@+id/txt_motivo_redirecionamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descreva o motivo do Redirecionamento"
+        android:textSize="15dp"
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toStartOf="@id/viewRedirecionar"
+        app:layout_constraintTop_toBottomOf="@id/EquipeSpinner"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:id="@+id/descricao_redirecionamento_editText"
+        style="@style/editText"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp"
+        android:hint=""
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_motivo_redirecionamento" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonRedirecionarEquipe"
+        style="@style/Button_yellow"
+        android:onClick="redirecionarEquipe"
+        android:text="Redirecionar"
+        app:layout_constraintBottom_toBottomOf="@id/viewRedirecionar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        />
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
