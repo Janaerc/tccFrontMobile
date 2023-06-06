@@ -26,5 +26,7 @@ public class RetrofitConfig {
 
     public ChamadoService getChamadoService() {return this.retrofit.create(ChamadoService.class);}
 
+    public ComentarioService getComentarioService() {return this.retrofit.create(ComentarioService.class);}
+
     public OrdemServicoService getOdemServicoService() {return this.retrofit.create(OrdemServicoService.class);}
 }
