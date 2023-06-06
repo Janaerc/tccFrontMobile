@@ -2,6 +2,7 @@ package backend;
 
 import java.util.List;
 
+import bean.Chamado;
 import model.ChamadoDTO;
 import model.OrdemServicoDTO;
 import retrofit2.Call;
@@ -32,6 +33,6 @@ public interface ChamadoService {
     @DELETE("chamado/{id}")
     Call<ChamadoDTO> excluirChamado(@Path("id") int id);
 
-    @PUT("chamado/associar/{idChamado}/{idUsuario}")
-    Call<ChamadoDTO> associarChamado(@Path("idChamado") int idChamado, @Path("idUsuario") int idUsuario);
+    @PUT("chamado/associar/{idChamado}")
+    Call<ChamadoDTO> associarChamado(@Path("idChamado") int idChamado,@Body ChamadoDTO chamado);
 }

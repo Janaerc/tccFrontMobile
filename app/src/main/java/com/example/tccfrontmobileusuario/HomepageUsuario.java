@@ -77,6 +77,7 @@ public class HomepageUsuario extends AppCompatActivity {
                 new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position){
+                        System.out.println (position);
                         int id = chamadoDTOList.get(position).getId();
                         Call<ChamadoDTO> call = new RetrofitConfig().getChamadoService().chamadoPorId(id);
                         call.enqueue(new Callback<ChamadoDTO>() {
