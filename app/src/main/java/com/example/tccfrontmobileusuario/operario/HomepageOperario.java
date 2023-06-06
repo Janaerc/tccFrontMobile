@@ -127,7 +127,9 @@ public class HomepageOperario extends AppCompatActivity {
                         new RecyclerItemClickListener.OnItemClickListener() {
                             @Override
                             public void onItemClick(View view, int position) {
-                                int id = chamadoDTOListMinhasOrdens.get(position).getId();
+                                System.out.println (position);
+                                System.out.println ();
+                                int id = chamadoDTOListEmAberto.get(position).getId();
                                 Call<ChamadoDTO> call = new RetrofitConfig().getChamadoService().chamadoPorId(id);
                                 call.enqueue(new Callback<ChamadoDTO>() {
                                     @Override
