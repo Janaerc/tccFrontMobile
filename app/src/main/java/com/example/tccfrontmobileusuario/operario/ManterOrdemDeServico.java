@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -49,6 +50,7 @@ public class ManterOrdemDeServico extends AppCompatActivity {
         predio = findViewById(R.id.ediTextPredio);
         localizacao = findViewById(R.id.descricao_localizacao_editText);
         problema = findViewById(R.id.descricao_problema_editText);
+        recyclerViewComentarios = findViewById(R.id.recyclerViewComentarios);
 
         campus.setText(chamadoDTO.getPredioId().getCampusId().getNome());
         predio.setText(chamadoDTO.getPredioId().getNome());
@@ -100,5 +102,13 @@ public class ManterOrdemDeServico extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         comentarios();
+    }
+
+    public void atualizarStatus(View view){
+        Intent it = new Intent(ManterOrdemDeServico.this, OperarioAtualizarStatus.class);
+        it.putExtra("usuario", usuarioDTO);
+        it.putExtra("chamado", chamadoDTO);
+        startActivity(it);
+
     }
 }
