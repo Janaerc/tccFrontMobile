@@ -15,6 +15,8 @@ import com.example.tccfrontmobileusuario.HomepageUsuario;
 import com.example.tccfrontmobileusuario.R;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import backend.DateUtils;
 import backend.RetrofitConfig;
@@ -48,17 +50,18 @@ public class DetalhesOrdemServicoAberta extends AppCompatActivity {
         localizacao.setText(chamadoDTO.getDescricaoLocal());
         problema.setText(chamadoDTO.getDescricaoProblema());
 
+        System.out.println("aqui esta a o chamadoDTO");
+        System.out.println(chamadoDTO);
+
 
     }
 
     public void associar(View view) throws ParseException {
-        //osDTO.setUsuarioOperarioId(usuarioDTO);
-        //osDTO.setId(chamadoDTO.getOrdemServicoId().getId());
-
-
         osDTO = chamadoDTO.getOrdemServicoId();
         osDTO.setUsuarioOperarioId(usuarioDTO);
-        //osDTO.setDataAbertura(DateUtils.formatDateForBackend(chamadoDTO.getOrdemServicoId().getDataAbertura()));
+
+
+
         AlertDialog.Builder msgBox = new AlertDialog.Builder(this);
         msgBox.setTitle("Associar");
         msgBox.setMessage("Tem certeza que deseja associar-se a ordem de serviço?");
@@ -67,7 +70,7 @@ public class DetalhesOrdemServicoAberta extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-            Call<OrdemServicoDTO> call = new RetrofitConfig().getOdemServicoService().associarOS(chamadoDTO.getOrdemServicoId().getId(), osDTO);
+            Call<OrdemServicoDTO> call = new RetrofitConfig().getOdemServicoService().associarOS(osDTO.getId(), osDTO);
 
 
             call.enqueue(new Callback<OrdemServicoDTO>() {

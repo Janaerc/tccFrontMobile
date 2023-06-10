@@ -239,6 +239,8 @@ public class HomepageOperario extends AppCompatActivity {
             public void onResponse(Call<List<ChamadoDTO>> call, Response<List<ChamadoDTO>> response) {
                 if (response.isSuccessful()) {
                     chamadoDTOListEmAberto = response.body();
+                    System.out.println("aqui estão os chamados que vieram do back");
+                    System.out.println(chamadoDTOListEmAberto);
                 } else {
                     Toast.makeText(HomepageOperario.this, "Erro ao carregar Chamados", Toast.LENGTH_SHORT).show();
                     Log.i("INFO", "erro");

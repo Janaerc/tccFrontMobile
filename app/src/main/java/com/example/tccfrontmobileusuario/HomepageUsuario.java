@@ -176,6 +176,7 @@ public class HomepageUsuario extends AppCompatActivity {
             public void onResponse(Call<List<ChamadoDTO>> call, Response<List<ChamadoDTO>> response) {
                 System.out.println("veio resposta");
                 chamadoDTOList = response.body();
+                System.out.println(chamadoDTOList);
                 chamadoListAdapter = new ChamadoListAdapter(chamadoDTOList);
 
                 //configura recyclerView
