@@ -89,6 +89,7 @@ public class DetalhesOrdemServicoAberta extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<OrdemServicoDTO> call, Throwable t) {
+                    Toast.makeText(DetalhesOrdemServicoAberta.this, "Erro ao associar a ordem de serviço", Toast.LENGTH_SHORT ).show();
 
                 }
             });

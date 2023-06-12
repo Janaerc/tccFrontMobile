@@ -73,11 +73,6 @@ public class Cadastro extends AppCompatActivity {
             Toast.makeText(this, "Preencha um E-mail Válido", Toast.LENGTH_SHORT).show();
             return;
         }
-
-
-
-
-
         //CASO: NÃO ATUALIZAR A SENHA
 
         if (senha.isEmpty()|| senha.isEmpty()) {
