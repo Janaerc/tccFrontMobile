@@ -105,17 +105,13 @@
 
     <Spinner
         android:id="@+id/EquipeSpinner"
-        android:textAppearance="@style/SpinnerTextStyle"
+        android:background="@color/gray"
         android:layout_width="250dp"
         android:layout_height="35dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toEndOf="@id/txt_Equipe"
         app:layout_constraintTop_toBottomOf="@id/orientacao1"
-        style="@style/spinner"
-
-
-
         />
 
     <TextView
