@@ -32,4 +32,6 @@ public class RetrofitConfig {
 
     public EspecialidadeService getEspecidadeService() {return this.retrofit.create(EspecialidadeService.class);}
 
+    public ComentarioOperarioService getComentarioOperarioService() {return this.retrofit.create(ComentarioOperarioService.class);}
+
 }

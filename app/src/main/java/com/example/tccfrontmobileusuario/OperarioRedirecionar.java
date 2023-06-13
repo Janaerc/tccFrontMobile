@@ -23,6 +23,7 @@ import backend.EspecialidadeService;
 import backend.RetrofitConfig;
 import bean.Campus;
 import model.ChamadoDTO;
+import model.ComentarioOperarioDTO;
 import model.EspecialidadeDTO;
 import model.OrdemServicoDTO;
 import model.UsuarioDTO;
@@ -110,15 +111,41 @@ public class OperarioRedirecionar extends AppCompatActivity {
         osDTO.setEspecialidadeId(espec);
         osDTO.setUsuarioOperarioId(null);
 
-        //criar a classe comentariooperariodto,
-        //passar todas as infos, fazer um call para comentariooperarioService q deve ser criada
+        ComentarioOperarioDTO comentarioOperarioDTO = new ComentarioOperarioDTO();
+        comentarioOperarioDTO.setDescricao(comentario.toString());
+        comentarioOperarioDTO.setUsuarioId(usuarioDTO);
+        comentarioOperarioDTO.setOrdemServicoId(osDTO);
+
 
         AlertDialog.Builder msgBox = new AlertDialog.Builder(this);
-        msgBox.setTitle("Associar");
+        msgBox.setTitle("Redirecionar");
         msgBox.setMessage("Tem certeza que deseja redirecionar a ordem de serviço?");
         msgBox.setPositiveButton("sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+
+                Call<ComentarioOperarioDTO> call1 = new RetrofitConfig().getComentarioOperarioService().redirecionar(comentarioOperarioDTO.getId(), comentarioOperarioDTO);
+                call1.enqueue(new Callback<ComentarioOperarioDTO>() {
+                    @Override
+                    public void onResponse(Call<ComentarioOperarioDTO> call, Response<ComentarioOperarioDTO> response) {
+                        if(response.isSuccessful()){
+                            Toast.makeText(OperarioRedirecionar.this, "Ordem de serviço redirecionada com sucesso", Toast.LENGTH_SHORT ).show();
+                            Intent it = new Intent(OperarioRedirecionar.this, HomepageOperario.class);
+                            it.putExtra("usuario", usuarioDTO);
+                            startActivity(it);
+                        }
+                        else {
+                            Toast.makeText(OperarioRedirecionar.this, "Não foi possível associar a ordem de serviço", Toast.LENGTH_SHORT ).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ComentarioOperarioDTO> call, Throwable t) {
+                        Toast.makeText(OperarioRedirecionar.this, "Erro ao redirecionar a ordem de serviço", Toast.LENGTH_SHORT ).show();
+                    }
+                });
+
+
                 Call<OrdemServicoDTO> call = new RetrofitConfig().getOdemServicoService().redirecionar(osDTO);
                 call.enqueue(new Callback<OrdemServicoDTO>() {
                     @Override
