@@ -19,4 +19,7 @@ public interface OrdemServicoService {
 
     @PUT("ordemservico/{id}")
     Call<OrdemServicoDTO> associarOS(@Path("id")Integer id, @Body OrdemServicoDTO osDTO);
+
+    @PUT("/ordemservico/VERIFICAR O QUE COLOCAR AQUI")
+    Call<OrdemServicoDTO> redirecionar(OrdemServicoDTO ordemServicoId);
 }

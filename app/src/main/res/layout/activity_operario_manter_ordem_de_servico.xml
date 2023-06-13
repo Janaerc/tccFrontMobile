@@ -333,11 +333,12 @@
 
             />
     </LinearLayout>
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp"
-            />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewComentarios"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp" />
 
 
 
@@ -358,17 +359,14 @@
     </ScrollView>
 
 
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonAtualizarStatus"
         style="@style/Button_yellow"
+        android:layout_marginBottom="15dp"
         android:onClick="atualizarStatus"
         android:text="Atualizar Status"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

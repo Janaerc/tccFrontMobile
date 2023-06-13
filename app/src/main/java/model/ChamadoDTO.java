@@ -1,6 +1,8 @@
 package model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -9,12 +11,14 @@ public class ChamadoDTO  implements Serializable{
     private Integer id;
     private String descricaoLocal;
     private String descricaoProblema;
-    private String anexo;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ", locale = "pt-BR", timezone = "GMT")
     private Date dataHora;
     private OrdemServicoDTO ordemServicoId;
     private PredioDTO predioId;
     private StatusDTO statusId;
     private UsuarioDTO usuarioId;
+    private String anexo;
+
 
     public ChamadoDTO() {
     }

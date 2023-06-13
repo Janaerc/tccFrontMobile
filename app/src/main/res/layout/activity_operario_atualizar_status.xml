@@ -117,34 +117,23 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonResolver"
         style="@style/Button_yellow"
+        android:layout_marginTop="15dp"
         android:onClick="resolver"
         android:text="Resolver"
-        app:layout_constraintTop_toBottomOf="@id/buttonRedirecionar"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonRedirecionar" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonAtualizarStatus"
+        style="@style/Button_yellow"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        />
-
-
-
-
-
-
-
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonAtualizarStatus"
-            style="@style/Button_yellow"
-            android:onClick="atualizarStatus"
-            android:text="Salvar Status"
-            app:layout_constraintTop_toBottomOf="@id/buttonResolver"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            />
+        android:onClick="salvarStatus"
+        android:text="Salvar Status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonResolver" />
 
 
 
