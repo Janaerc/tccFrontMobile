@@ -4,6 +4,126 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EsqueceuSenha">
+    tools:context=".EsqueceuSenha"
+    android:background="@color/white">
+
+
+        <ImageView
+            android:id="@+id/imagemufprSobre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ufpr_primeiroacesso"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+
+            />
+
+        <ImageView
+            android:id="@+id/closebutton2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_close_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="10dp"
+            android:onClick="closeActivity"
+            />
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/menuopcoesbranco"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="20dp"
+            android:onClick="menuDeslogado"
+            />
+
+
+        <TextView
+            android:id="@+id/tituloRecuperarSenha"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="200dp"
+            android:text="Recuperar Senha"
+            android:textAlignment="center"
+            android:textColor="@color/yellow"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/imagemufprSobre"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/textoInstrucao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginHorizontal="40dp"
+            android:text="Para redefinir sua senha, preencha seu CPF abaixo."
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/imagemufprSobre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/textoOrientacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:text="Se sua conta for encontrada, um e-mail será enviado para o seu email de cadastro com as instruções para reestabelecer seu acesso."
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textoInstrucao" />
+
+
+
+
+        <EditText
+            android:id="@+id/editTextCpfEsqueceuSenha"
+            style="@style/editText"
+            android:inputType="number"
+            android:textColor="@color/gray"
+            android:hint="CPF"
+            android:layout_marginTop="40dp"
+            android:textColorHint="@color/blue"
+            android:textSize="20dp"
+            android:drawableRight="@drawable/baseline_person_2_24"
+            app:layout_constraintTop_toBottomOf="@+id/textoOrientacao"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonRecuperarSenha"
+            style="@style/Button_yellow"
+            android:onClick="recuperarSenha"
+            android:text="Recuperar Senha"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            />
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
