@@ -144,14 +144,12 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonRedirecionarEquipe"
         style="@style/Button_yellow"
-        android:onClick="redirecionarEquipe"
+        android:layout_marginBottom="15dp"
+        android:onClick="atualizarEspecialidade"
         android:text="Redirecionar"
         app:layout_constraintBottom_toBottomOf="@id/viewRedirecionar"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 

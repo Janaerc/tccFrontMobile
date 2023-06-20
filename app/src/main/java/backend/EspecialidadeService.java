@@ -8,7 +8,7 @@ import retrofit2.http.GET;
 
 public interface EspecialidadeService {
 
-    @GET("especialidade/lista")
+    @GET("especialidade")
     Call<List<EspecialidadeDTO>> listarEspecialidades();
 
 }
