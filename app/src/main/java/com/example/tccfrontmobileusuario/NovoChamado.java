@@ -178,7 +178,7 @@ public class NovoChamado extends AppCompatActivity {
         chamado.setPredioId(preaux);
         chamado.setUsuarioId(usuarioDTO);
         StatusDTO status = new StatusDTO();
-        status.setId(2);
+        status.setId(1);
         chamado.setStatusId(status);
         LocalDateTime agora = LocalDateTime.now();
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
