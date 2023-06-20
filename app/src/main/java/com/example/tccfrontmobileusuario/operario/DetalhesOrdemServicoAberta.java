@@ -70,9 +70,9 @@ public class DetalhesOrdemServicoAberta extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-            Call<OrdemServicoDTO> call = new RetrofitConfig().getOdemServicoService().associarOS(osDTO.getId(), osDTO);
-
-
+            Call<OrdemServicoDTO> call = new RetrofitConfig().getOdemServicoService().associarOS(osDTO.getId(), osDTO.getUsuarioOperarioId().getId());
+            System.out.println(osDTO.getId());
+            System.out.println(osDTO.getUsuarioOperarioId().getId());
             call.enqueue(new Callback<OrdemServicoDTO>() {
                 @Override
                 public void onResponse(Call<OrdemServicoDTO> call, Response<OrdemServicoDTO> response) {
@@ -90,7 +90,9 @@ public class DetalhesOrdemServicoAberta extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<OrdemServicoDTO> call, Throwable t) {
                     Toast.makeText(DetalhesOrdemServicoAberta.this, "Erro ao associar a ordem de serviço", Toast.LENGTH_SHORT ).show();
-
+                    Intent it = new Intent(DetalhesOrdemServicoAberta.this, HomepageOperario.class);
+                    it.putExtra("usuario", usuarioDTO);
+                    startActivity(it);
                 }
             });
 

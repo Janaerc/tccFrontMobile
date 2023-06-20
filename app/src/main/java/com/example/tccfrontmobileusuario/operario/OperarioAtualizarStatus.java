@@ -4,11 +4,13 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.tccfrontmobileusuario.OperarioRedirecionar;
 import com.example.tccfrontmobileusuario.R;
 
 import backend.RetrofitConfig;
@@ -56,6 +58,14 @@ public class OperarioAtualizarStatus extends AppCompatActivity {
         msgBox.show();
     }
 
+
+    public void redirecionar(View view) {
+        Intent it = new Intent(OperarioAtualizarStatus.this, OperarioRedirecionar.class);
+        it.putExtra("usuario", usuarioDTO);
+        it.putExtra("chamado", chamadoDTO);
+        startActivity(it);
+    }
+
     public void salvarStatus(View view) {
         AlertDialog.Builder msgBox = new AlertDialog.Builder(this);
         msgBox.setMessage("Tem certeza que deseja salvar esta atualização de status?");
@@ -64,10 +74,13 @@ public class OperarioAtualizarStatus extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 ComentarioOperarioDTO comentarioOperarioDTO = new ComentarioOperarioDTO();
                 comentarioOperarioDTO.setUsuarioId(usuarioDTO);
-                comentarioOperarioDTO.setDescricao(descricao.toString());
+                comentarioOperarioDTO.setDescricao(descricao.getText().toString());
                 OrdemServicoDTO ordemServicoDTO;
                 ordemServicoDTO = chamadoDTO.getOrdemServicoId();
+                ordemServicoDTO.setDataAbertura(null);
                 comentarioOperarioDTO.setOrdemServicoId(ordemServicoDTO);
+                comentarioOperarioDTO.setDataHora(null);
+
 
                 Call<OrdemServicoDTO> call = new RetrofitConfig().getComentarioService().inserirComentario(comentarioOperarioDTO);
                 call.enqueue(new Callback<OrdemServicoDTO>() {
@@ -75,6 +88,9 @@ public class OperarioAtualizarStatus extends AppCompatActivity {
                     public void onResponse(Call<OrdemServicoDTO> call, Response<OrdemServicoDTO> response) {
                         if (response.isSuccessful()){
                             Toast.makeText(OperarioAtualizarStatus.this, "Status atualizado com sucesso", Toast.LENGTH_SHORT).show();
+                            Intent it = new Intent(OperarioAtualizarStatus.this, HomepageOperario.class);
+                            it.putExtra("usuario", usuarioDTO);
+                            startActivity(it);
                         }
                     }
 
