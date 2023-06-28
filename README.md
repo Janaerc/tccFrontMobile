@@ -31,9 +31,9 @@ git clone https://github.com/NicolleCosta/ManutencaoUFPR-WS-Rest.git
 ```
 
 ### Passo 2:
-Prepare o banco de dados no PgAdmin, utilizando os scripts de criação do banco de dados e povoamento das tabelas, disponível nos apêndices 8 e 9 do documento escrito [Manutenção UFPR](https://github.com/Janaerc/tccFrontMobile/blob/master/app/build.gradle) 
+Prepare o banco de dados no PgAdmin, utilizando os scripts de criação do banco de dados e povoamento das tabelas, disponível nos apêndices 8 e 9 do documento escrito [Manutenção UFPR](https://github.com/Janaerc/tccFrontMobile/blob/master/TCC%20-%20Manuten%C3%A7%C3%A3o%20UFPR.pdf) 
 Não esqueça de povoar as tabelas corretamente, e principalmente povoar o usuário Gerente.
-*****LEMBRAR DE ALTERAR PARA O LINK DO MATERIAL FINAL DENTRO DO REPOSITÓRIO*********
+
 
 ### Passo 3:
 Abra a pasta ManutencaoUFPR-WS-Rest no NetBens.
@@ -42,8 +42,8 @@ Faça o Build e execute o sistema.
 
 ### Passo 4:
 Acesse a aplicação web com o perfil gerente inserido previamente no Banco de Dados:
- 	CPF:  ```bash 00328973084 ```
-	Senha:  ```bash 123 ```
+ 	CPF:  ```00328973084 ```
+	Senha:  ```123 ```
 
 ### Passo 5:
 Navegue até o menu funcionários e adicione um administrador e um almoxarife.
@@ -63,12 +63,5 @@ Retorne ao homepage do aplicativo e acesse com seus dados de cadastro.
 Pronto, você já poderá abrir um chamado.
 
 Se você acessar a aplicação web com os dados do administrador, seu chamado estará esperando para ser associado a um número de ordem de serviço, após a conclusão deste passo você poderá acessar o aplicativo com seus dados de login de operário, e se associar aquela ordem, poderá atualizar o status do andamento e caso deseje poderá retirar um material. Para isso, acesse o perfil de almoxarife e escolha a ordem de serviço associada ao operário, cadastre a retirada de material. Por fim, verifique o andamento pelo perfil de gerente.
-
-
-
-
-
-<h5> Atenção este projeto foi desenvolvido para </h5> 
-[![Windows](https://svgshare.com/i/ZhY.svg)](https://svgshare.com/i/ZhY.svg)
 
 
