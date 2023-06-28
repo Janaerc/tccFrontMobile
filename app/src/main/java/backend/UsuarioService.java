@@ -21,8 +21,10 @@ public interface UsuarioService {
     @POST("usuario/login")
     Call<UsuarioDTO> login(@Body LoginDTO loginDTO);
 
-    @PUT("atualizaUsuario/{id}")
+    @PUT("usuario/alterar/{id}")
     Call<UsuarioDTO> atualizaUsuario(@Path("id") int id, @Body UsuarioDTO usuario);
     @GET("usuario/recuperarSenha/{cpf}")
     Call<UsuarioDTO> recuperarSenha(@Path("cpf") int cpf);
+    @PUT("usuario/{id}")
+    Call<UsuarioDTO> atualizaUsuarioComSenha(@Path("id") int id, @Body UsuarioDTO usuario);
 }

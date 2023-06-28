@@ -1,4 +1,4 @@
-package com.example.tccfrontmobileusuario;
+package com.example.tccfrontmobileusuario.usuario;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,8 @@ import android.widget.Spinner;
 
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.tccfrontmobileusuario.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -178,7 +180,7 @@ public class NovoChamado extends AppCompatActivity {
         chamado.setPredioId(preaux);
         chamado.setUsuarioId(usuarioDTO);
         StatusDTO status = new StatusDTO();
-        status.setId(2);
+        status.setId(1);
         chamado.setStatusId(status);
         LocalDateTime agora = LocalDateTime.now();
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");

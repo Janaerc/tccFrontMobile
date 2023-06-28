@@ -1,4 +1,4 @@
-package com.example.tccfrontmobileusuario;
+package com.example.tccfrontmobileusuario.operario;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,16 +13,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.tccfrontmobileusuario.operario.DetalhesOrdemServicoAberta;
-import com.example.tccfrontmobileusuario.operario.HomepageOperario;
-import com.example.tccfrontmobileusuario.operario.OperarioAtualizarStatus;
+import com.example.tccfrontmobileusuario.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import backend.EspecialidadeService;
 import backend.RetrofitConfig;
-import bean.Campus;
 import model.ChamadoDTO;
 import model.ComentarioOperarioDTO;
 import model.EspecialidadeDTO;

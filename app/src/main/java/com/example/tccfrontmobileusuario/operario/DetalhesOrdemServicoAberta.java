@@ -10,15 +10,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.tccfrontmobileusuario.DetalhesChamadoAberto;
-import com.example.tccfrontmobileusuario.HomepageUsuario;
 import com.example.tccfrontmobileusuario.R;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
-import backend.DateUtils;
 import backend.RetrofitConfig;
 import model.ChamadoDTO;
 import model.OrdemServicoDTO;

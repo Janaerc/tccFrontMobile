@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.tccfrontmobileusuario.OperarioRedirecionar;
 import com.example.tccfrontmobileusuario.R;
 
 import backend.RetrofitConfig;
@@ -44,9 +43,30 @@ public class OperarioAtualizarStatus extends AppCompatActivity {
         msgBox.setPositiveButton("sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //fazer o call que irá atualizar o status id de todos os chamados
+                //fazer o call que irá atualizar o status id = 2 de todos os chamados
                 //em que a ordemServicoID = chamado.getOrdemServicoID.getId
 
+                Call<ChamadoDTO> call = new RetrofitConfig().getChamadoService().resolverChamado(chamadoDTO.getOrdemServicoId().getId());
+
+                call.enqueue(new Callback<ChamadoDTO>() {
+                    @Override
+                    public void onResponse(Call<ChamadoDTO> call, Response<ChamadoDTO> response) {
+                        if(response.isSuccessful()){
+                            Toast.makeText(OperarioAtualizarStatus.this, "Ordem de serviço atualizada com sucesso", Toast.LENGTH_SHORT ).show();
+                            Intent it = new Intent(OperarioAtualizarStatus.this, HomepageOperario.class);
+                            it.putExtra("usuario", usuarioDTO);
+                            startActivity(it);
+                        } else {
+                            Toast.makeText(OperarioAtualizarStatus.this, "Não foi possível atualizar a ordem de serviço", Toast.LENGTH_SHORT ).show();
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ChamadoDTO> call, Throwable t) {
+
+                    }
+                });
             }
         });
         msgBox.setNegativeButton("Não", new DialogInterface.OnClickListener() {

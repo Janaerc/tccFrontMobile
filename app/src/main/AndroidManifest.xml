@@ -14,13 +14,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".OperarioRedirecionar"
+            android:name=".operario.OperarioRedirecionar"
             android:exported="false" />
         <activity
             android:name=".operario.OperarioAtualizarStatus"
             android:exported="false" />
         <activity
-            android:name=".SobreAppLogadoUsuario"
+            android:name=".usuario.SobreAppLogadoUsuario"
             android:exported="false" />
         <activity
             android:name=".operario.ManterOrdemDeServico"
@@ -35,38 +35,38 @@
             android:name=".operario.HomepageOperario"
             android:exported="false" />
         <activity
-            android:name=".EsqueceuSenha"
+            android:name=".usuario.EsqueceuSenha"
             android:exported="false" />
         <activity
-            android:name=".NovoChamado"
+            android:name=".usuario.NovoChamado"
             android:exported="false" />
         <activity
             android:name=".ui.login.NovoChamado"
             android:exported="false"
             android:label="@string/title_activity_novo_chamado" />
         <activity
-            android:name=".SobreApp"
+            android:name=".usuario.SobreApp"
             android:exported="false" />
         <activity
-            android:name=".Cadastro"
+            android:name=".usuario.Cadastro"
             android:exported="false" />
         <activity
-            android:name=".DetalhesChamadoAberto"
+            android:name=".usuario.DetalhesChamadoAberto"
             android:exported="false" />
         <activity
-            android:name=".DetalhesChamadoEmAndamento"
+            android:name=".usuario.DetalhesChamadoEmAndamento"
             android:exported="false" />
         <activity
-            android:name=".HomepageUsuario"
+            android:name=".usuario.HomepageUsuario"
             android:exported="false" />
         <activity
-            android:name=".PrimeiroAcesso"
+            android:name=".usuario.PrimeiroAcesso"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".usuario.SplashScreen"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".usuario.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

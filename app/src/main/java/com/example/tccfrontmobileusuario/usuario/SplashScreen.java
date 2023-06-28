@@ -1,8 +1,10 @@
-package com.example.tccfrontmobileusuario;
+package com.example.tccfrontmobileusuario.usuario;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.tccfrontmobileusuario.R;
 
 public class SplashScreen extends AppCompatActivity {
 

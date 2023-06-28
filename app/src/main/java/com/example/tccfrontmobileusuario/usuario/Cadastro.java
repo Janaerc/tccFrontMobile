@@ -1,4 +1,4 @@
-package com.example.tccfrontmobileusuario;
+package com.example.tccfrontmobileusuario.usuario;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,12 +6,16 @@ import androidx.appcompat.widget.PopupMenu;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.tccfrontmobileusuario.R;
+
+import org.apache.commons.codec.binary.Hex;
+
+import java.security.SecureRandom;
 
 import backend.RetrofitConfig;
 import model.UsuarioDTO;
@@ -54,9 +58,14 @@ public class Cadastro extends AppCompatActivity {
         UsuarioDTO usuario = new UsuarioDTO();
 
         usuario.setId(usuarioDTO.getId());
-        usuario.setNome(usuarioDTO.getNome());
-        usuario.setTelefone(usuarioDTO.getTelefone());
-        usuario.setEmail(usuarioDTO.getEmail());
+        usuario.setNome(nomeUsuario.getText().toString());
+        usuario.setTelefone(telefoneUsuario.getText().toString());
+        usuario.setEmail(emailUsuario.getText().toString());
+        usuario.setCpf(usuarioDTO.getCpf());
+        usuario.setTipoUsuarioId(usuarioDTO.getTipoUsuarioId());
+        usuario.setSenha(usuarioDTO.getSenha());
+        usuario.setSalt(usuarioDTO.getSalt());
+        usuario.setBloqueio(usuarioDTO.getBloqueio());
         String senha = senhaUsuario.getText().toString();
         String senha2 = senhaUsuario2.getText().toString();
 
@@ -75,7 +84,7 @@ public class Cadastro extends AppCompatActivity {
         }
         //CASO: NÃO ATUALIZAR A SENHA
 
-        if (senha.isEmpty()|| senha.isEmpty()) {
+        if (senha.isEmpty()|| senha2.isEmpty()) {
 
             Call<UsuarioDTO> call1 = new RetrofitConfig().getUsuarioService().atualizaUsuario(usuario.getId(),usuario);
             call1.enqueue(new Callback<UsuarioDTO>() {
@@ -108,8 +117,13 @@ public class Cadastro extends AppCompatActivity {
         else {
             //CASO: ATUALIZAR A SENHA
             if(senha.equals(senha2)) {
-                usuario.setSenha(usuarioDTO.getSenha());
-                Call<UsuarioDTO> call1 = new RetrofitConfig().getUsuarioService().atualizaUsuario(usuario.getId(),usuario);
+                usuario.setSenha(senhaUsuario.getText().toString());
+                SecureRandom secureRAndom = new SecureRandom();
+                byte[] salt = new byte[16];
+                secureRAndom.nextBytes(salt);
+                String saltStr = Hex.encodeHexString(salt);
+                //usuario.setSalt(saltStr);
+                Call<UsuarioDTO> call1 = new RetrofitConfig().getUsuarioService().atualizaUsuarioComSenha(usuario.getId(),usuario);
                 call1.enqueue(new Callback<UsuarioDTO>() {
                     @Override
                     public void onResponse(Call<UsuarioDTO> call, Response<UsuarioDTO> response) {

@@ -35,4 +35,7 @@ public interface ChamadoService {
 
     @PUT("chamado/associar/{idChamado}")
     Call<ChamadoDTO> associarChamado(@Path("idChamado") int idChamado,@Body ChamadoDTO chamado);
+
+    @GET("chamado/resolverChamado/{id}")
+    Call<ChamadoDTO> resolverChamado(@Path("id")int id);
 }

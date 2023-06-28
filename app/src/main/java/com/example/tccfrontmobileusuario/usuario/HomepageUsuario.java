@@ -1,4 +1,4 @@
-package com.example.tccfrontmobileusuario;
+package com.example.tccfrontmobileusuario.usuario;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,13 +20,13 @@ import android.widget.Toast;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.sql.Array;
+import com.example.tccfrontmobileusuario.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import adapter.ChamadoListAdapter;
 import backend.RetrofitConfig;
-import bean.Chamado;
 import helper.RecyclerItemClickListener;
 import model.ChamadoDTO;
 import model.UsuarioDTO;

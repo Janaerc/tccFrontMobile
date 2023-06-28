@@ -14,10 +14,9 @@ public class UsuarioDTO implements Serializable{
     private EspecialidadeDTO especialidadeId;
     private TipoUsuarioDTO tipoUsuarioId;
 
-    public UsuarioDTO() {
-    }
+    private String salt;
 
-    public UsuarioDTO(Integer id, String nome, String cpf, String telefone, String email, String senha, Boolean bloqueio, EspecialidadeDTO especialidadeId, TipoUsuarioDTO tipoUsuarioId) {
+    public UsuarioDTO(Integer id, String nome, String cpf, String telefone, String email, String senha, Boolean bloqueio, EspecialidadeDTO especialidadeId, TipoUsuarioDTO tipoUsuarioId, String salt) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -27,6 +26,10 @@ public class UsuarioDTO implements Serializable{
         this.bloqueio = bloqueio;
         this.especialidadeId = especialidadeId;
         this.tipoUsuarioId = tipoUsuarioId;
+        this.salt = salt;
+    }
+
+    public UsuarioDTO() {
     }
 
     public Integer getId() {
@@ -101,6 +104,14 @@ public class UsuarioDTO implements Serializable{
         this.tipoUsuarioId = tipoUsuarioId;
     }
 
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
     @Override
     public String toString() {
         return "UsuarioDTO{" +
@@ -113,6 +124,7 @@ public class UsuarioDTO implements Serializable{
                 ", bloqueio=" + bloqueio +
                 ", especialidadeId=" + especialidadeId +
                 ", tipoUsuarioId=" + tipoUsuarioId +
+                ", salt=" + salt +
                 '}';
     }
 

@@ -1,4 +1,4 @@
-package com.example.tccfrontmobileusuario;
+package com.example.tccfrontmobileusuario.usuario;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,8 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.tccfrontmobileusuario.operario.DetalhesOrdemServicoAberta;
-import com.example.tccfrontmobileusuario.operario.HomepageOperario;
+import com.example.tccfrontmobileusuario.R;
 
 import backend.RetrofitConfig;
 import model.ChamadoDTO;
