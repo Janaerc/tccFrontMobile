@@ -10,11 +10,11 @@
 ## 🛠 Pré-requisitos
 
 - Ter o [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) instalado na sua máquina;
-- Ter o [Apache NetBeans] v17(https://netbeans.apache.org/download/archive/index.html);
+- Ter o [Apache NetBeans](https://netbeans.apache.org/download/archive/index.html) v17;
 - Ter o [Android Studio](https://developer.android.com/studio) instalado em seu sistema operacional;
-- Ter o [PgAdmin] v6.8(https://www.pgadmin.org/download/) 
-- Ter o [PostgreSQL] v14 (https://www.postgresql.org/download/)
-- Também tem que ter o [Java SE] v11.0.17 (https://www.java.com/pt-BR/download/ie_manual.jsp?locale=pt_BR).
+- Ter o [PgAdmin](https://www.pgadmin.org/download/)  v6.8; 
+- Ter o [PostgreSQL](https://www.postgresql.org/download/)  v14;
+- Também tem que ter o [Java SE](https://www.java.com/pt-BR/download/ie_manual.jsp?locale=pt_BR) v11.0.17;
 
 
 
@@ -31,7 +31,7 @@ git clone https://github.com/NicolleCosta/ManutencaoUFPR-WS-Rest.git
 ```
 
 ### Passo 2:
-Prepare o banco de dados no PgAdmin, utilizando os scripts de criação do banco de dados e povoamento das tabelas, disponível nos apêndices 8 e 9 do documento escrito [Manutenção UFPR] (https://github.com/Janaerc/tccFrontMobile/blob/master/app/build.gradle) 
+Prepare o banco de dados no PgAdmin, utilizando os scripts de criação do banco de dados e povoamento das tabelas, disponível nos apêndices 8 e 9 do documento escrito [Manutenção UFPR](https://github.com/Janaerc/tccFrontMobile/blob/master/app/build.gradle) 
 Não esqueça de povoar as tabelas corretamente, e principalmente povoar o usuário Gerente.
 *****LEMBRAR DE ALTERAR PARA O LINK DO MATERIAL FINAL DENTRO DO REPOSITÓRIO*********
 
@@ -42,8 +42,8 @@ Faça o Build e execute o sistema.
 
 ### Passo 4:
 Acesse a aplicação web com o perfil gerente inserido previamente no Banco de Dados:
- 	CPF: 00328973084
-Senha: 123
+ 	CPF:  ```bash 00328973084 ```
+	Senha:  ```bash 123 ```
 
 ### Passo 5:
 Navegue até o menu funcionários e adicione um administrador e um almoxarife.
@@ -68,6 +68,7 @@ Se você acessar a aplicação web com os dados do administrador, seu chamado es
 
 
 
-<h5> Atenção este projeto foi desenvolvido para </h5> [![Windows](https://svgshare.com/i/ZhY.svg)](https://svgshare.com/i/ZhY.svg)
+<h5> Atenção este projeto foi desenvolvido para </h5> 
+[![Windows](https://svgshare.com/i/ZhY.svg)](https://svgshare.com/i/ZhY.svg)
 
 
