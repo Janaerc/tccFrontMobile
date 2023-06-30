@@ -121,8 +121,9 @@ public class DetalhesChamadoAberto extends AppCompatActivity {
 
 
         public void voltarHome(View view) {
-            Intent intent = new Intent(DetalhesChamadoAberto.this, HomepageUsuario.class);
-            startActivity(intent);
+            Intent it = new Intent(DetalhesChamadoAberto.this, HomepageUsuario.class);
+            it.putExtra("usuario", usuarioDTO);
+            startActivity(it);
         }
 
 

@@ -177,4 +177,9 @@ public class OperarioRedirecionar extends AppCompatActivity {
         msgBox.show();
     }
 
+    public void voltarHome(View view) {
+        Intent intent = new Intent(OperarioRedirecionar.this, HomepageOperario.class);
+        intent.putExtra("usuario", usuarioDTO);
+        startActivity(intent);
+    }
 }

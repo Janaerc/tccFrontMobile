@@ -196,6 +196,7 @@ public class CadastroOperario extends AppCompatActivity {
 
     public void closeActivity (View view) {
         Intent intent = new Intent(CadastroOperario.this, HomepageOperario.class);
+        intent.putExtra("usuario", usuarioDTO);
         startActivity(intent);
         finish();
 

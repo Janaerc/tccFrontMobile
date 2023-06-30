@@ -13,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.tccfrontmobileusuario.R;
+import com.example.tccfrontmobileusuario.usuario.HomepageUsuario;
+import com.example.tccfrontmobileusuario.usuario.SobreAppLogadoUsuario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -111,4 +113,11 @@ public class ManterOrdemDeServico extends AppCompatActivity {
         startActivity(it);
 
     }
+
+    public void closeActivity(View view) {
+            Intent intent = new Intent(ManterOrdemDeServico.this, HomepageOperario.class);
+            intent.putExtra("usuario", usuarioDTO);
+            startActivity(intent);
+            finish();
+        }
 }

@@ -130,4 +130,10 @@ public class OperarioAtualizarStatus extends AppCompatActivity {
         msgBox.show();
 
     }
+
+    public void voltarHome(View view) {
+        Intent intent = new Intent(OperarioAtualizarStatus.this, HomepageOperario.class);
+        intent.putExtra("usuario", usuarioDTO);
+        startActivity(intent);
+    }
 }

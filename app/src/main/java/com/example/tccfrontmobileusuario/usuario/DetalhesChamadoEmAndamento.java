@@ -75,6 +75,7 @@ public class DetalhesChamadoEmAndamento extends AppCompatActivity {
 
     public void voltarHome(View view) {
         Intent intent = new Intent(DetalhesChamadoEmAndamento.this, HomepageUsuario.class);
+        intent.putExtra("usuario", usuarioDTO);
         startActivity(intent);
     }
 

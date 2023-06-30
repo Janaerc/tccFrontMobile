@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.tccfrontmobileusuario.R;
+import com.example.tccfrontmobileusuario.operario.HomepageOperario;
 
 import model.UsuarioDTO;
 
@@ -65,10 +66,17 @@ public class SobreAppLogadoUsuario extends AppCompatActivity {
 
 //********************************************************************************************************
     public void closeActivity(View view) {
-        Intent intent = new Intent(SobreAppLogadoUsuario.this, HomepageUsuario.class);
-        intent.putExtra("usuario", usuarioDTO);
-        startActivity(intent);
-        finish();
+        if(usuarioDTO.getTipoUsuarioId().getId() == 1) {
+            Intent intent = new Intent(SobreAppLogadoUsuario.this, HomepageUsuario.class);
+            intent.putExtra("usuario", usuarioDTO);
+            startActivity(intent);
+            finish();
+        } else {
+            Intent intent = new Intent(SobreAppLogadoUsuario.this, HomepageOperario.class);
+            intent.putExtra("usuario", usuarioDTO);
+            startActivity(intent);
+            finish();
+        }
 
     }
 

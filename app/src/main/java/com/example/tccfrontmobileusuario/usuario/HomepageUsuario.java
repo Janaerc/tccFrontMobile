@@ -127,7 +127,6 @@ public class HomepageUsuario extends AppCompatActivity {
     }
 
     public void updateRecyclerChamadoList(){
-        //fazer igual do ListarTodos do pokemon linha 138 até a linha 182
         Call<List<ChamadoDTO>> call1 = new RetrofitConfig().getChamadoService().listaDeChamados(usuarioDTO.getId());
 
         call1.enqueue(new Callback<List<ChamadoDTO>>() {
@@ -135,12 +134,7 @@ public class HomepageUsuario extends AppCompatActivity {
             public void onResponse(Call<List<ChamadoDTO>> call, Response<List<ChamadoDTO>> response) {
                 if (response.isSuccessful()) {
                     chamadoDTOList = response.body();
-                    System.out.println("dentro do updaterecycler");
-                    System.out.println(chamadoDTOList);
-                    //configura adapter
                     chamadoListAdapter = new ChamadoListAdapter(chamadoDTOList);
-
-                    //configura recyclerView
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
                     recyclerView.setLayoutManager(layoutManager);
                     recyclerView.setHasFixedSize(true);

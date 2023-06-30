@@ -22,10 +22,10 @@ public interface ChamadoService {
     Call<List<ChamadoDTO>> listaDeChamados(@Path("idUsuario") int idUsuario);
 
     @GET("chamado/listaChamadosEmAberto/{idUsuario}")
-    Call<List<ChamadoDTO>> listaChamadosEmAberto(@Path("idUsuario") int idUsuario);
+    Call<List<ChamadoDTO>> listaChamadosEmAberto(@Path("idUsuario") int idUsuario); //esse
 
     @GET("chamado/listaMeusChamados/{idUsuario}")
-    Call<List<ChamadoDTO>> listaMeusChamados(@Path("idUsuario") int idUsuario);
+    Call<List<ChamadoDTO>> listaMeusChamados(@Path("idUsuario") int idUsuario); //esse
 
     @GET("chamado/chamadoId/{id}")
     Call<ChamadoDTO> chamadoPorId (@Path("id") int id);
