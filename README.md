@@ -34,31 +34,34 @@ git clone https://github.com/NicolleCosta/ManutencaoUFPR-WS-Rest.git
 Prepare o banco de dados no PgAdmin, utilizando os scripts de criação do banco de dados e povoamento das tabelas, disponível nos apêndices 8 e 9 do documento escrito [Manutenção UFPR](https://github.com/Janaerc/tccFrontMobile/blob/master/TCC%20-%20Manuten%C3%A7%C3%A3o%20UFPR.pdf) 
 Não esqueça de povoar as tabelas corretamente, e principalmente povoar o usuário Gerente.
 
-
 ### Passo 3:
 Abra a pasta ManutencaoUFPR-WS-Rest no NetBens.
+Em Services, acesse Servers.
+Configure um servidor Glassfish 6.2.5.
+
+
+### Passo 4:
 Em Web-Pages > WEB-INF > glassfish-resources.xml altere as configurações, para se adequar às configurações do seu postgres.
 Faça o Build e execute o sistema.
 
-### Passo 4:
+### Passo 5:
 Acesse a aplicação web com o perfil gerente inserido previamente no Banco de Dados:
  	CPF:  ```00328973084 ```
 	Senha:  ```123 ```
 
-### Passo 5:
+### Passo 6:
 Navegue até o menu funcionários e adicione um administrador e um almoxarife.
 
-### Passo 6:
+### Passo 7:
 Navegue até o menu operário e adicione um operário.
 
-
-### Passo 7:
-Abra a pasta tccFrontMobile no Android Studio, adicione um emulador mínimo de 5 Pixels com Android Oreo API 27. Execute o projeto no NetBeans, e execute o emulador no Android Studio.
-
 ### Passo 8:
-No emulador, clique na opção primeiro acesso e cadastre-se.
+Abra a pasta tccFrontMobile no Android Studio, adicione um emulador mínimo de 5 Pixels com Android Oreo API 30. Execute o projeto no NetBeans, e execute o emulador no Android Studio.
 
 ### Passo 9:
+No emulador, clique na opção primeiro acesso e cadastre-se.
+
+### Passo 10:
 Retorne ao homepage do aplicativo e acesse com seus dados de cadastro.
 Pronto, você já poderá abrir um chamado.
 
