@@ -1,4 +1,4 @@
-package com.example.tccfrontmobileusuario;
+package com.example.tccfrontmobileusuario.usuario;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,17 +6,16 @@ import androidx.appcompat.widget.PopupMenu;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
+import org.apache.commons.codec.binary.Hex;
 
 
-import com.example.tccfrontmobileusuario.operario.CadastroOperario;
+import com.example.tccfrontmobileusuario.R;
+
+import java.security.SecureRandom;
 
 import backend.RetrofitConfig;
 import backend.ValidaCPF;
@@ -138,21 +137,17 @@ public void closeActivity (View view) {
         usuario.setTelefone(telefoneUsuario.getText().toString());
         usuario.setCpf(cpfUsuario.getText().toString());
         usuario.setEmail(emailUsuario.getText().toString());
+        SecureRandom secureRAndom = new SecureRandom();
+        byte[] salt = new byte[16];
+        secureRAndom.nextBytes(salt);
+        String saltStr = Hex.encodeHexString(salt);
         usuario.setSenha(senha);
         usuario.setBloqueio(false);
         usuario.setTipoUsuarioId(tipoUsuarioDTO);
         usuario.setEspecialidadeId(especialidadeDTO);
-
+        usuario.setSalt(saltStr);
 
         Call<UsuarioDTO> call1 = new RetrofitConfig().getUsuarioService().cadastrarUsuario(usuario);
-        System.out.println(usuario.getNome());
-        System.out.println(usuario.getTelefone());
-        System.out.println(usuario.getCpf());
-        System.out.println(usuario.getEmail());
-        System.out.println(usuario.getSenha());
-        System.out.println(usuario.getBloqueio());
-        System.out.println("tipoUsuario " + usuario.getTipoUsuarioId());
-        System.out.println("especialidade " + usuario.getEspecialidadeId());
         call1.enqueue(new Callback<UsuarioDTO>() {
 
                           @Override

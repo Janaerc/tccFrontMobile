@@ -2,6 +2,7 @@ package com.example.tccfrontmobileusuario.operario;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,23 +18,20 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tccfrontmobileusuario.DetalhesChamadoAberto;
-import com.example.tccfrontmobileusuario.DetalhesChamadoEmAndamento;
-import com.example.tccfrontmobileusuario.HomepageUsuario;
-import com.example.tccfrontmobileusuario.Logout;
+import com.example.tccfrontmobileusuario.usuario.Cadastro;
+import com.example.tccfrontmobileusuario.usuario.HomepageUsuario;
+import com.example.tccfrontmobileusuario.usuario.Logout;
 import com.example.tccfrontmobileusuario.R;
-import com.example.tccfrontmobileusuario.SobreApp;
+import com.example.tccfrontmobileusuario.usuario.SobreApp;
+import com.example.tccfrontmobileusuario.usuario.SobreAppLogadoUsuario;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import adapter.ChamadoListAdapter;
-import adapter.OrdemServicoListAdapter;
 import backend.RetrofitConfig;
-import bean.Chamado;
 import helper.RecyclerItemClickListener;
 import model.ChamadoDTO;
-import model.OrdemServicoDTO;
 import model.UsuarioDTO;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -292,26 +290,23 @@ public class HomepageOperario extends AppCompatActivity {
 
 
     public void menuOperario(View view) {
-        openOptionsMenu();
+        PopupMenu popup = new PopupMenu(this, view);
+        popup.setOnMenuItemClickListener(this::onOptionsItemSelected);
+        popup.inflate(R.menu.menu_usuario);
+        popup.show();
     }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_operario, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.sobreApp:
-                Intent intent = new Intent(HomepageOperario.this, SobreApp.class);
+        switch (item.getItemId()){
+            case R.id.sobreAppUsuarioLogado:
+                Intent intent = new Intent(HomepageOperario.this, SobreAppLogadoUsuario.class);
+                intent.putExtra("usuario", usuarioDTO);
                 startActivity(intent);
                 finish();
                 return true;
-            case R.id.cadastro_operario:
+            case R.id.cadastro:
                 Intent intent2 = new Intent(HomepageOperario.this, CadastroOperario.class);
+                intent2.putExtra("usuario", usuarioDTO);
                 startActivity(intent2);
                 finish();
                 return true;
@@ -321,7 +316,9 @@ public class HomepageOperario extends AppCompatActivity {
                 return true;
 
 
+
         }
+
 
 
         return super.onOptionsItemSelected(item);

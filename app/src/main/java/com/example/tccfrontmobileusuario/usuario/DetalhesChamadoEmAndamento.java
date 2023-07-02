@@ -1,4 +1,4 @@
-package com.example.tccfrontmobileusuario;
+package com.example.tccfrontmobileusuario.usuario;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+
+import com.example.tccfrontmobileusuario.R;
 
 import model.ChamadoDTO;
 import model.UsuarioDTO;
@@ -73,6 +75,7 @@ public class DetalhesChamadoEmAndamento extends AppCompatActivity {
 
     public void voltarHome(View view) {
         Intent intent = new Intent(DetalhesChamadoEmAndamento.this, HomepageUsuario.class);
+        intent.putExtra("usuario", usuarioDTO);
         startActivity(intent);
     }
 

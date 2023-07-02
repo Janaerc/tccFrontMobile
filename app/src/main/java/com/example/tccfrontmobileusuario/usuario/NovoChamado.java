@@ -1,4 +1,4 @@
-package com.example.tccfrontmobileusuario;
+package com.example.tccfrontmobileusuario.usuario;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,8 @@ import android.widget.Spinner;
 
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.tccfrontmobileusuario.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

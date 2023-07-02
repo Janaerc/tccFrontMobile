@@ -11,13 +11,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.tccfrontmobileusuario.Cadastro;
-import com.example.tccfrontmobileusuario.HomepageUsuario;
-import com.example.tccfrontmobileusuario.Logout;
-import com.example.tccfrontmobileusuario.MainActivity;
-import com.example.tccfrontmobileusuario.PrimeiroAcesso;
+import com.example.tccfrontmobileusuario.usuario.Cadastro;
+import com.example.tccfrontmobileusuario.usuario.HomepageUsuario;
+import com.example.tccfrontmobileusuario.usuario.Logout;
 import com.example.tccfrontmobileusuario.R;
-import com.example.tccfrontmobileusuario.SobreApp;
+import com.example.tccfrontmobileusuario.usuario.SobreApp;
 
 import backend.RetrofitConfig;
 import model.UsuarioDTO;
@@ -58,9 +56,15 @@ public class CadastroOperario extends AppCompatActivity {
         UsuarioDTO usuario = new UsuarioDTO();
 
         usuario.setId(usuarioDTO.getId());
-        usuario.setNome(usuarioDTO.getNome());
-        usuario.setTelefone(usuarioDTO.getTelefone());
-        usuario.setEmail(usuarioDTO.getEmail());
+        usuario.setNome(nomeUsuario.getText().toString());
+        usuario.setTelefone(telefoneUsuario.getText().toString());
+        usuario.setEmail(emailUsuario.getText().toString());
+        usuario.setCpf(usuarioDTO.getCpf());
+        usuario.setTipoUsuarioId(usuarioDTO.getTipoUsuarioId());
+        usuario.setSenha(usuarioDTO.getSenha());
+        usuario.setSalt(usuarioDTO.getSalt());
+        usuario.setBloqueio(usuarioDTO.getBloqueio());
+        usuario.setEspecialidadeId(usuarioDTO.getEspecialidadeId());
         String senha = senhaUsuario.getText().toString();
         String senha2 = senhaUsuario2.getText().toString();
 
@@ -79,7 +83,7 @@ public class CadastroOperario extends AppCompatActivity {
         }
         //CASO: NÃO ATUALIZAR A SENHA
 
-        if (senha.isEmpty()|| senha.isEmpty()) {
+        if (senha.isEmpty()|| senha2.isEmpty()) {
 
             Call<UsuarioDTO> call1 = new RetrofitConfig().getUsuarioService().atualizaUsuario(usuario.getId(),usuario);
             call1.enqueue(new Callback<UsuarioDTO>() {
@@ -112,8 +116,8 @@ public class CadastroOperario extends AppCompatActivity {
         else {
             //CASO: ATUALIZAR A SENHA
             if(senha.equals(senha2)) {
-                usuario.setSenha(usuarioDTO.getSenha());
-                Call<UsuarioDTO> call1 = new RetrofitConfig().getUsuarioService().atualizaUsuario(usuario.getId(),usuario);
+                usuario.setSenha(senhaUsuario.getText().toString());
+                Call<UsuarioDTO> call1 = new RetrofitConfig().getUsuarioService().atualizaUsuarioComSenha(usuario.getId(),usuario);
                 call1.enqueue(new Callback<UsuarioDTO>() {
                     @Override
                     public void onResponse(Call<UsuarioDTO> call, Response<UsuarioDTO> response) {
@@ -192,6 +196,7 @@ public class CadastroOperario extends AppCompatActivity {
 
     public void closeActivity (View view) {
         Intent intent = new Intent(CadastroOperario.this, HomepageOperario.class);
+        intent.putExtra("usuario", usuarioDTO);
         startActivity(intent);
         finish();
 

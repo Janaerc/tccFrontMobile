@@ -1,4 +1,4 @@
-package com.example.tccfrontmobileusuario;
+package com.example.tccfrontmobileusuario.usuario;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.tccfrontmobileusuario.operario.HomepageOperario;
+import com.example.tccfrontmobileusuario.R;
 
 import backend.RetrofitConfig;
 import model.UsuarioDTO;

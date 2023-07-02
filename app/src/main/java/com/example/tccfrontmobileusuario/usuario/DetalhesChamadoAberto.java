@@ -1,4 +1,4 @@
-package com.example.tccfrontmobileusuario;
+package com.example.tccfrontmobileusuario.usuario;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,8 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.tccfrontmobileusuario.operario.DetalhesOrdemServicoAberta;
-import com.example.tccfrontmobileusuario.operario.HomepageOperario;
+import com.example.tccfrontmobileusuario.R;
 
 import backend.RetrofitConfig;
 import model.ChamadoDTO;
@@ -122,8 +121,9 @@ public class DetalhesChamadoAberto extends AppCompatActivity {
 
 
         public void voltarHome(View view) {
-            Intent intent = new Intent(DetalhesChamadoAberto.this, HomepageUsuario.class);
-            startActivity(intent);
+            Intent it = new Intent(DetalhesChamadoAberto.this, HomepageUsuario.class);
+            it.putExtra("usuario", usuarioDTO);
+            startActivity(it);
         }
 
 

@@ -1,4 +1,4 @@
-package com.example.tccfrontmobileusuario;
+package com.example.tccfrontmobileusuario.usuario;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.tccfrontmobileusuario.R;
 import com.example.tccfrontmobileusuario.operario.HomepageOperario;
 
 import backend.RetrofitConfig;
@@ -43,26 +44,30 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<UsuarioDTO> call, Response<UsuarioDTO> response) {
                 if (response.isSuccessful()) {
                     UsuarioDTO usuarioDTO = response.body();
+                    if (usuarioDTO.getBloqueio() == true) {
+                        Toast.makeText(MainActivity.this, "Usuário bloqueado, contate o administrador", Toast.LENGTH_SHORT).show();
+                    } else {
+                        if (usuarioDTO.getTipoUsuarioId().getId() == 1) {
+                            Intent intent = new Intent(MainActivity.this, HomepageUsuario.class);
+                            intent.putExtra("usuario", usuarioDTO);
+                            startActivity(intent);
+                            finish();
+                        }
+                        if (usuarioDTO.getTipoUsuarioId().getId() == 2) {
+                            Intent intent = new Intent(MainActivity.this, HomepageOperario.class);
+                            intent.putExtra("usuario", usuarioDTO);
+                            startActivity(intent);
+                            finish();
+                        }
+                        }
+                    } else{
+                        if (response.code() == 401)
+                            Toast.makeText(MainActivity.this, "Login ou Senha incorretos", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(MainActivity.this, "Erro de login", Toast.LENGTH_SHORT).show();
 
-                    if(usuarioDTO.getTipoUsuarioId().getId() == 1) {
-                        Intent intent = new Intent(MainActivity.this, HomepageUsuario.class);
-                        intent.putExtra("usuario", usuarioDTO);
-                        startActivity(intent);
-                        finish();
                     }
-                    if(usuarioDTO.getTipoUsuarioId().getId() == 2) {
-                        Intent intent = new Intent(MainActivity.this, HomepageOperario.class);
-                        intent.putExtra("usuario", usuarioDTO);
-                        startActivity(intent);
-                        finish();
-                    }
-                } else {
-                    if (response.code() == 401)
-                        Toast.makeText(MainActivity.this, "Login ou Senha incorretos", Toast.LENGTH_SHORT).show();
-                    else
-                        Toast.makeText(MainActivity.this, "Erro de login", Toast.LENGTH_SHORT).show();
 
-                }
             }
 
             @Override

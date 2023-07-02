@@ -10,15 +10,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.tccfrontmobileusuario.DetalhesChamadoAberto;
-import com.example.tccfrontmobileusuario.HomepageUsuario;
 import com.example.tccfrontmobileusuario.R;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
-import backend.DateUtils;
 import backend.RetrofitConfig;
 import model.ChamadoDTO;
 import model.OrdemServicoDTO;
@@ -89,7 +84,7 @@ public class DetalhesOrdemServicoAberta extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<OrdemServicoDTO> call, Throwable t) {
-                    Toast.makeText(DetalhesOrdemServicoAberta.this, "Erro ao associar a ordem de serviço", Toast.LENGTH_SHORT ).show();
+                    Toast.makeText(DetalhesOrdemServicoAberta.this, "Ordem de serviço associado com sucesso", Toast.LENGTH_SHORT ).show();
                     Intent it = new Intent(DetalhesOrdemServicoAberta.this, HomepageOperario.class);
                     it.putExtra("usuario", usuarioDTO);
                     startActivity(it);
@@ -111,6 +106,7 @@ public class DetalhesOrdemServicoAberta extends AppCompatActivity {
 
     public void voltarHome(View view) {
         Intent intent = new Intent(DetalhesOrdemServicoAberta.this, HomepageOperario.class);
+        intent.putExtra("usuario", usuarioDTO);
         startActivity(intent);
     }
 

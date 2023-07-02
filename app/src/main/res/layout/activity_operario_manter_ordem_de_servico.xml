@@ -30,17 +30,17 @@
                 android:titleMarginStart="50dp"
 
                 />
+
             <ImageView
                 android:id="@+id/retornoHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:onClick="closeActivity"
                 android:src="@drawable/retorno"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="10dp"
-                android:onClick="voltarHome"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

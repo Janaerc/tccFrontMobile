@@ -1,4 +1,4 @@
-package com.example.tccfrontmobileusuario;
+package com.example.tccfrontmobileusuario.usuario;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +8,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+
+import com.example.tccfrontmobileusuario.R;
+import com.example.tccfrontmobileusuario.operario.HomepageOperario;
 
 import model.UsuarioDTO;
 
@@ -64,10 +66,17 @@ public class SobreAppLogadoUsuario extends AppCompatActivity {
 
 //********************************************************************************************************
     public void closeActivity(View view) {
-        Intent intent = new Intent(SobreAppLogadoUsuario.this, HomepageUsuario.class);
-        intent.putExtra("usuario", usuarioDTO);
-        startActivity(intent);
-        finish();
+        if(usuarioDTO.getTipoUsuarioId().getId() == 1) {
+            Intent intent = new Intent(SobreAppLogadoUsuario.this, HomepageUsuario.class);
+            intent.putExtra("usuario", usuarioDTO);
+            startActivity(intent);
+            finish();
+        } else {
+            Intent intent = new Intent(SobreAppLogadoUsuario.this, HomepageOperario.class);
+            intent.putExtra("usuario", usuarioDTO);
+            startActivity(intent);
+            finish();
+        }
 
     }
 
