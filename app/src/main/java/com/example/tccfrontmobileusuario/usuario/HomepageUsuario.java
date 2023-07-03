@@ -88,8 +88,8 @@ public class HomepageUsuario extends AppCompatActivity {
                                     Bundle params = new Bundle();
                                     params.putString("operacao","view");
                                     params.putSerializable("chamado", selectedChamadoDTO);
-                                    System.out.println("id do status aqui em baixo");
-                                    System.out.println(selectedChamadoDTO.getStatusId().getId());
+                                    System.out.println("aqui está o chamado que veio do banco");
+                                    System.out.println(selectedChamadoDTO);
                                     if(selectedChamadoDTO.getStatusId().getId() == 1 && selectedChamadoDTO.getOrdemServicoId().getUsuarioOperarioId().getId() != null) {
                                         Intent it = new Intent(HomepageUsuario.this, DetalhesChamadoEmAndamento.class);
                                         it.putExtra("chamado", selectedChamadoDTO);
