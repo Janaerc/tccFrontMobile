@@ -91,7 +91,7 @@ public class CadastroOperario extends AppCompatActivity {
                 public void onResponse(Call<UsuarioDTO> call, Response<UsuarioDTO> response) {
                     if (response.isSuccessful()){
                         Toast.makeText(CadastroOperario.this, "Cadastro Atualizado", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(CadastroOperario.this, HomepageUsuario.class);
+                        Intent intent = new Intent(CadastroOperario.this, HomepageOperario.class);
                         intent.putExtra("usuario", usuarioDTO);
                         startActivity(intent);
 
@@ -122,7 +122,7 @@ public class CadastroOperario extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<UsuarioDTO> call, Response<UsuarioDTO> response) {
                         if (response.isSuccessful()){
-                            Toast.makeText(CadastroOperario.this, "Cadastro Atualizado2", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CadastroOperario.this, "Cadastro Atualizado", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(CadastroOperario.this, HomepageUsuario.class);
                             intent.putExtra("usuario", usuarioDTO);
                             startActivity(intent);
