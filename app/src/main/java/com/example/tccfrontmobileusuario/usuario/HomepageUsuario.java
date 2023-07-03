@@ -102,6 +102,12 @@ public class HomepageUsuario extends AppCompatActivity {
                                         it.putExtra("usuario", usuarioDTO);
                                         startActivity(it);
                                     }
+                                    if(selectedChamadoDTO.getStatusId().getId() == 2) {
+                                        Intent it = new Intent(HomepageUsuario.this, DetalhesChamadoEncerrado.class);
+                                        it.putExtra("chamado", selectedChamadoDTO);
+                                        it.putExtra("usuario", usuarioDTO);
+                                        startActivity(it);
+                                    }
                                 }
                             }
 
