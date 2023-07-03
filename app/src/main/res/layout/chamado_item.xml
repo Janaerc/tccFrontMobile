@@ -111,18 +111,6 @@
 
              android:textSize="14dp" />
 
-         <ImageView
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="end"
-             android:layout_marginTop="8dp"
-             android:paddingTop="8dp"
-             android:src="@drawable/status_circulo"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintTop_toTopOf="parent"
-
-             />
-
 
      </LinearLayout>
 

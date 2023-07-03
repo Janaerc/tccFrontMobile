@@ -195,13 +195,14 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="60dp"
         android:hint=""
-        android:inputType="text" />
+        android:inputType="textMultiLine" />
 
     <TextView
         android:id="@+id/descricao_problema_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Descreva o problema"
+
         android:textSize="15dp"
         android:textColor="@color/gray"
         app:layout_constraintStart_toStartOf="@+id/view_detalhes"
@@ -223,7 +224,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="60dp"
         android:hint=""
-        android:inputType="text" />
+        android:inputType="textMultiLine" />
 
 
     <TextView
