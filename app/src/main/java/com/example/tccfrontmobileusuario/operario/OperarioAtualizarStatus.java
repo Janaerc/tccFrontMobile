@@ -52,7 +52,7 @@ public class OperarioAtualizarStatus extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<ChamadoDTO> call, Response<ChamadoDTO> response) {
                         if(response.isSuccessful()){
-                            Toast.makeText(OperarioAtualizarStatus.this, "Ordem de serviço atualizada com sucesso", Toast.LENGTH_SHORT ).show();
+                            Toast.makeText(OperarioAtualizarStatus.this, "Ordem de serviço finalizada com sucesso", Toast.LENGTH_SHORT ).show();
                             Intent it = new Intent(OperarioAtualizarStatus.this, HomepageOperario.class);
                             it.putExtra("usuario", usuarioDTO);
                             startActivity(it);

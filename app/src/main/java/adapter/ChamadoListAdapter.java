@@ -74,6 +74,8 @@ public class ChamadoListAdapter extends RecyclerView.Adapter<ChamadoListAdapter.
         holder.descricaoLocal.setText(chamadoDTO.getDescricaoLocal());
         System.out.println(holder.descricaoLocal);
 
+        holder.numeroChamado.setText(chamadoDTO.getId().toString());
+
     }
 
     @Override
