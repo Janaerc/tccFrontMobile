@@ -255,7 +255,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         app:layout_constraintBottom_toBottomOf="@id/viewStatus"
-        app:layout_constraintStart_toStarOf="@id/status_textview"
+        app:layout_constraintStart_toStartOf="@id/status_textview"
         app:layout_constraintTop_toBottomOf="@id/status_textview"/>
 
 

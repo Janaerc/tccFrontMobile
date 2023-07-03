@@ -90,13 +90,13 @@ public class HomepageUsuario extends AppCompatActivity {
                                     params.putSerializable("chamado", selectedChamadoDTO);
                                     System.out.println("id do status aqui em baixo");
                                     System.out.println(selectedChamadoDTO.getStatusId().getId());
-                                    if(selectedChamadoDTO.getStatusId().getId() == 1 || selectedChamadoDTO.getOrdemServicoId().getUsuarioOperarioId().getId() != null) {
+                                    if(selectedChamadoDTO.getStatusId().getId() == 1 && selectedChamadoDTO.getOrdemServicoId().getUsuarioOperarioId().getId() != null) {
                                         Intent it = new Intent(HomepageUsuario.this, DetalhesChamadoEmAndamento.class);
                                         it.putExtra("chamado", selectedChamadoDTO);
                                         it.putExtra("usuario", usuarioDTO);
                                         startActivity(it);
                                     }
-                                    if(selectedChamadoDTO.getStatusId().getId() == 1 || selectedChamadoDTO.getOrdemServicoId().getUsuarioOperarioId().getId() == null) {
+                                    if(selectedChamadoDTO.getStatusId().getId() == 1 && selectedChamadoDTO.getOrdemServicoId().getUsuarioOperarioId().getId() == null) {
                                         Intent it = new Intent(HomepageUsuario.this, DetalhesChamadoAberto.class);
                                         it.putExtra("chamado", selectedChamadoDTO);
                                         it.putExtra("usuario", usuarioDTO);
