@@ -52,6 +52,7 @@ public class DetalhesChamadoEncerrado extends AppCompatActivity {
         editPredio = findViewById(R.id.editTextPredio);
         editLocalizacao = findViewById(R.id.descricao_localizacao_editText);
         editProblema = findViewById(R.id.descricao_problema_editText);
+        recyclerViewComentarios = findViewById(R.id.recyclerViewComentarios);
         editCampus.setText(chamadoDTO.getPredioId().getCampusId().getNome());
         editPredio.setText(chamadoDTO.getPredioId().getNome());
         editLocalizacao.setText(chamadoDTO.getDescricaoLocal());
