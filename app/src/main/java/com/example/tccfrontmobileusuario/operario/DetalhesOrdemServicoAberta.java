@@ -65,7 +65,7 @@ public class DetalhesOrdemServicoAberta extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-            Call<OrdemServicoDTO> call = new RetrofitConfig().getOdemServicoService().associarOS(osDTO.getId(), osDTO.getUsuarioOperarioId().getId());
+            Call<OrdemServicoDTO> call = new RetrofitConfig().getOdemServicoService().associarOS(osDTO.getId(), osDTO.getUsuarioOperarioId().getId(), chamadoDTO.getId());
             System.out.println(osDTO.getId());
             System.out.println(osDTO.getUsuarioOperarioId().getId());
             call.enqueue(new Callback<OrdemServicoDTO>() {
