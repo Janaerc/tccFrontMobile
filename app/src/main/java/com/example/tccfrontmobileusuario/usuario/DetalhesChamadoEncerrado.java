@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tccfrontmobileusuario.R;
@@ -41,6 +42,7 @@ public class DetalhesChamadoEncerrado extends AppCompatActivity {
     private ComentarioListAdapter comentarioListAdapter;
 
     private RecyclerView recyclerViewComentarios;
+    TextView numeroChamado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,9 @@ public class DetalhesChamadoEncerrado extends AppCompatActivity {
         editLocalizacao = findViewById(R.id.descricao_localizacao_editText);
         editProblema = findViewById(R.id.descricao_problema_editText);
         recyclerViewComentarios = findViewById(R.id.recyclerViewComentarios);
+        numeroChamado = findViewById(R.id.numero_chamado_detalhes);
+
+        numeroChamado.setText(chamadoDTO.getId().toString());
         editCampus.setText(chamadoDTO.getPredioId().getCampusId().getNome());
         editPredio.setText(chamadoDTO.getPredioId().getNome());
         editLocalizacao.setText(chamadoDTO.getDescricaoLocal());

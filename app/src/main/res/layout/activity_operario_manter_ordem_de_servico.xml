@@ -68,14 +68,12 @@
         android:id="@+id/numero_chamado_detalhes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="#2023226598"
-        android:textSize="10dp"
-        android:textColor="@color/gray"
-        app:layout_constraintStart_toStartOf="@id/scrollbar"
-        app:layout_constraintTop_toTopOf="@id/scrollbar"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
-        />
+        android:textColor="@color/gray"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="@id/scrollbar"
+        app:layout_constraintTop_toTopOf="@id/scrollbar" />
 
 
     <LinearLayout

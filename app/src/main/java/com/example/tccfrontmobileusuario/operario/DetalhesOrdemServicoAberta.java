@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tccfrontmobileusuario.R;
@@ -24,7 +25,7 @@ import retrofit2.Response;
 
 public class DetalhesOrdemServicoAberta extends AppCompatActivity {
     OrdemServicoDTO osDTO = new OrdemServicoDTO();
-
+    TextView numeroOS;
     UsuarioDTO usuarioDTO;
     ChamadoDTO chamadoDTO;
 
@@ -39,7 +40,9 @@ public class DetalhesOrdemServicoAberta extends AppCompatActivity {
         predio = findViewById(R.id.editTextPredio);
         localizacao = findViewById(R.id.descricao_localizacao_editText);
         problema = findViewById(R.id.descricao_problema_editText);
+        numeroOS = findViewById(R.id.numero_chamado_detalhes);
 
+        numeroOS.setText(chamadoDTO.getOrdemServicoId().getId().toString());
         campus.setText(chamadoDTO.getPredioId().getCampusId().getNome());
         predio.setText(chamadoDTO.getPredioId().getNome());
         localizacao.setText(chamadoDTO.getDescricaoLocal());
@@ -65,7 +68,7 @@ public class DetalhesOrdemServicoAberta extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-            Call<OrdemServicoDTO> call = new RetrofitConfig().getOdemServicoService().associarOS(osDTO.getId(), osDTO.getUsuarioOperarioId().getId(), chamadoDTO.getId());
+            Call<OrdemServicoDTO> call = new RetrofitConfig().getOdemServicoService().associarOS(osDTO.getId(), osDTO.getUsuarioOperarioId().getId());
             System.out.println(osDTO.getId());
             System.out.println(osDTO.getUsuarioOperarioId().getId());
             call.enqueue(new Callback<OrdemServicoDTO>() {

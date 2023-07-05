@@ -90,14 +90,14 @@ public class HomepageUsuario extends AppCompatActivity {
                                     params.putSerializable("chamado", selectedChamadoDTO);
                                     System.out.println("aqui está o chamado que veio do banco");
                                     System.out.println(selectedChamadoDTO);
-                                    if(selectedChamadoDTO.getStatusId().getId() == 3) {
+                                    if(selectedChamadoDTO.getStatusId().getId() == 1 && selectedChamadoDTO.getOrdemServicoId().getUsuarioOperarioId().getId() != null) {
                                         System.out.println("entrou no 1");
                                         Intent it = new Intent(HomepageUsuario.this, DetalhesChamadoEmAndamento.class);
                                         it.putExtra("chamado", selectedChamadoDTO);
                                         it.putExtra("usuario", usuarioDTO);
                                         startActivity(it);
                                     }
-                                    if(selectedChamadoDTO.getStatusId().getId() == 1) {
+                                    if(selectedChamadoDTO.getStatusId().getId() == 1 && selectedChamadoDTO.getOrdemServicoId().getUsuarioOperarioId().getId() == null) {
                                         System.out.println("entrou no 2");
                                         Intent it = new Intent(HomepageUsuario.this, DetalhesChamadoAberto.class);
                                         it.putExtra("chamado", selectedChamadoDTO);

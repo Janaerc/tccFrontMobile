@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tccfrontmobileusuario.R;
@@ -42,6 +43,8 @@ public class ManterOrdemDeServico extends AppCompatActivity {
 
     private RecyclerView recyclerViewComentarios;
 
+    TextView numeroOS;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +56,9 @@ public class ManterOrdemDeServico extends AppCompatActivity {
         localizacao = findViewById(R.id.descricao_localizacao_editText);
         problema = findViewById(R.id.descricao_problema_editText);
         recyclerViewComentarios = findViewById(R.id.recyclerViewComentarios);
+        numeroOS = findViewById(R.id.numero_chamado_detalhes);
 
+        numeroOS.setText(chamadoDTO.getOrdemServicoId().getId().toString());
         campus.setText(chamadoDTO.getPredioId().getCampusId().getNome());
         predio.setText(chamadoDTO.getPredioId().getNome());
         localizacao.setText(chamadoDTO.getDescricaoLocal());
