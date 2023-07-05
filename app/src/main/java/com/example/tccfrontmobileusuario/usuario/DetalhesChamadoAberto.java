@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -28,6 +29,8 @@ public class DetalhesChamadoAberto extends AppCompatActivity {
 
     ChamadoDTO chamadoDTO;
 
+    TextView numeroChamado;
+
     EditText editCampus, editPredio, editLocalizacao, editProblema;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +42,14 @@ public class DetalhesChamadoAberto extends AppCompatActivity {
         editPredio = findViewById(R.id.editTextPredio);
         editLocalizacao = findViewById(R.id.descricao_localizacao_editText);
         editProblema = findViewById(R.id.descricao_problema_editText);
+        numeroChamado = findViewById(R.id.numero_chamado_detalhes);
 
+        numeroChamado.setText(chamadoDTO.getId().toString());
         editCampus.setText(chamadoDTO.getPredioId().getCampusId().getNome());
         editPredio.setText(chamadoDTO.getPredioId().getNome());
         editLocalizacao.setText(chamadoDTO.getDescricaoLocal());
         editProblema.setText(chamadoDTO.getDescricaoProblema());
+
     }
 
     @Override

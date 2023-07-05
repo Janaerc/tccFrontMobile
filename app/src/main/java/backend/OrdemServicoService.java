@@ -17,7 +17,7 @@ public interface OrdemServicoService {
     Call<List<OrdemServicoDTO>> listaMinhasOrdens(@Path("id")Integer id);
 
     @PUT("ordemservico/associarOS/{id}/{idUsuario}/{idChamado}")
-    Call<OrdemServicoDTO> associarOS(@Path("id")Integer id, @Path ("idUsuario") Integer idUsuario, @Path ("idChamado") Integer idChamado);
+    Call<OrdemServicoDTO> associarOS(@Path("id")Integer id, @Path ("idUsuario") Integer idUsuario);
 
     @PUT("ordemservico/redirecionarOS/{id}/{idEspecialidade}")
     Call<OrdemServicoDTO> redirecionarOS(@Path("id")Integer id, @Path("idEspecialidade") Integer idEspecialidade);
