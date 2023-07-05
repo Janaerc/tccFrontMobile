@@ -16,7 +16,7 @@ public interface OrdemServicoService {
     @GET("ordemServico/listarMinhasOrdens/{id}")
     Call<List<OrdemServicoDTO>> listaMinhasOrdens(@Path("id")Integer id);
 
-    @PUT("ordemservico/associarOS/{id}/{idUsuario}/{idChamado}")
+    @PUT("ordemservico/associarOS/{id}/{idUsuario}")
     Call<OrdemServicoDTO> associarOS(@Path("id")Integer id, @Path ("idUsuario") Integer idUsuario);
 
     @PUT("ordemservico/redirecionarOS/{id}/{idEspecialidade}")
